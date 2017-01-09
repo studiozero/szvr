@@ -1,0 +1,18 @@
+doctype
+html
+	head
+		- var site = {title: 'Studio Zero : London WebVR & AR Agency', url: 'http://www.studiozero.co', image: 'http://www.web-vr.xyz/assets/images/og-image.jpg', favicon: 'http://www.web-vr.xyz/assets/images/favicon.ico', description: 'Studio Zero - WebVR Development, VR/AR/MXR Strategy and Production'}
+		each val, key in site
+			meta(property='og:'+'#{key}', content='#{val}')
+
+		- var tCard = { description: 'Studio Zero - WebVR Development, VR/AR/MXR Strategy and Production', title:'Studio Zero : London WebVR & AR Agency', site: '@studiozeroco', card: 'summary', image: 'http://www.web-vr.xyz/assets/images/og-image.jpg'}
+
+		each val, key in tCard
+			meta(name='twitter:'+'#{key}', content='#{val}')
+
+		title #{site.title}
+		link(rel="stylesheet" href="/main.css")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat")
+		script(src="/assets/js/aframe-v0.4.0.min.js")
+	body
+		!= yield

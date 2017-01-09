@@ -1,0 +1,44 @@
+nav#navigation
+	svg.header-logo(viewbox='0 0 772.48 316.87')
+		g
+			path(d='M512,645.84L359.32,381.37H664.71Zm-141.56-258L512,633,653.58,387.8H370.45Z', transform='translate(-127.06 -328.97)')
+			path(d='M899.54,593.45H594.15L746.85,329ZM605.28,587H888.41L746.85,341.82Z', transform='translate(-127.06 -328.97)')
+			path(d='M432.45,593.45H127.06L279.76,329ZM138.19,587H421.32L279.76,341.82Z', transform='translate(-127.06 -328.97)')
+header.home-header
+	a-scene(embedded)
+		h1.intro We Are Studio Zero
+		p.intro A Creative Product Agency Dedicated to Exploring the Nexus of Virtual and Augmented reality on the web.
+		a-assets
+			img#grid(src="/assets/images/grid.png" crossorigin="anonymous")
+			img#sky(src="/assets/images/tmp.jpg" crossorigin="anonymous")
+
+		a-entity(position="0 0 0" geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;")
+
+		a-sky(src="#sky" rotation="0 -90 0")
+
+section
+	ul.work-list
+		li.work-item
+			a
+				img(src="/assets/images/1.png")
+		li.work-item
+			a
+				img(src="/assets/images/2.png")
+
+section
+	p We specialise in building Immersive Virtual and Augmented worlds and experiences on the Web for both Mobile and Desktop hardware. 
+
+section
+	ul
+		li Virtual Reality
+		li Augmented Reality
+		li Mobile VR
+	ul
+		li Brands
+		li Storytelling
+		li Education
+section
+	h2 Say Hi
+
+	p Studio Zero
+	p Unit 7, East Block <br> Panther House <br> 38 Mount Pleasant <br> London <br> WC1X 0AN
