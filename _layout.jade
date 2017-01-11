@@ -4,7 +4,8 @@ html
 		- var site = {title: 'We are Studio Zero | Immersive Web', url: 'http://www.studiozero.co', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg', description: 'Studio Zero | Creative studio based in London, building Virtual, Augmented and Mixed reality experiences on the Web.',  }
 		each val, key in site
 			meta(property='og:'+'#{key}', content='#{val}')
-			meta(property='fb:app_id', content='793071684157637')
+
+		meta(property='fb:app_id', content='793071684157637')
 
 		- var tCard = { description: 'Studio Zero | Creative studio based in London, building Virtual, Augmented and Mixed reality experiences on the Web.', title:'We are Studio Zero | Immersive Web', site: '@studiozeroco', card: 'summary', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg'}
 
