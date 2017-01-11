@@ -1,11 +1,11 @@
 doctype
 html
 	head
-		- var site = {title: 'We are Studio Zero | Immersive Web', url: 'http://www.studiozero.co', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg', favicon: 'http://www.web-vr.xyz/assets/images/favicon.ico', description: 'We are Studio Zero | Immersive Web | VR | AR | MR | AI' }
+		- var site = {title: 'We are Studio Zero | Immersive Web', url: 'http://www.studiozero.co', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg', description: 'Studio Zero | Creative studio based in London, building Virtual, Augmented and Mixed reality experiences on the Web.' }
 		each val, key in site
 			meta(property='og:'+'#{key}', content='#{val}')
 
-		- var tCard = { description: 'We are Studio Zero | Immersive Web | VR | AR | MR | AI', title:'We are Studio Zero | Immersive Web', site: '@studiozeroco', card: 'summary', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg'}
+		- var tCard = { description: 'Studio Zero | Creative studio based in London, building Virtual, Augmented and Mixed reality experiences on the Web.', title:'We are Studio Zero | Immersive Web', site: '@studiozeroco', card: 'summary', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg'}
 
 		each val, key in tCard
 			meta(name='twitter:'+'#{key}', content='#{val}')
