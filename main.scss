@@ -40,6 +40,10 @@ nav{
     list-style: none;
     float:right;
 
+    li{
+      float: left;
+    }
+
     a{
       color:black;
       text-decoration:none;
@@ -84,6 +88,9 @@ h1.intro{
   padding:0;
   margin:0;
   width:100%;
+  color:#bdbdbd;
+  font-family: 'Nunito Sans';
+  font-weight: 200;
 
   font-size: 50px;
 

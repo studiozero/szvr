@@ -8,19 +8,26 @@ nav#navigation
 		ul.nav-right
 			li
 				a(href="http://www.medium.com/studio-zero") Blog
+			li
+				a(href="http://www.facebook.com/wearestudiozero") Facebook
+			li
+				a(href="http://www.instagram.com/wearestudiozero") Instagram
+			li
+				a(href="http://www.twitter.com/studiozeroco") Twitter
 header.home-header
 	a-scene(embedded)
 		h1.intro Studio Zero
 		a-assets
 			img#grid(src="/assets/images/grid.png" crossorigin="anonymous")
 			img#sky(src="/assets/images/chrome.jpg" crossorigin="anonymous")
+			img#reflect(src="/assets/images/reflect.png")
 		
 		a-entity#logo(position="0 1.8 -8")
-			a-entity#one(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" scale="5 5 5" position="-7.5 1 -11.35" material="color: black" rotation="30 90 90")
-			a-entity#two(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" position="0 0.23 4" material="color: black" rotation="90 90 90")
-			a-entity#three(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" scale="2 2 2" position="3 0.3 0" material="color: black" rotation="30 90 90")
+			a-entity#one(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" scale="5 5 5" position="-7.5 1 -11.35" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="30 90 90")
+			a-entity#two(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" position="0 0.23 4" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="90 90 90")
+			a-entity#three(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" scale="2 2 2" position="3 0.3 0" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="30 90 90")
 
-		a-entity(position="0 0 0" geometry="primitive: plane; width: 100; height: 100;" rotation="-90 0 0" material="src: #grid; repeat: 100 100; transparent: true;metalness:0; roughness: 0.4;")
+		a-entity(ground)
 
 		a-sky(src="#sky" rotation="0 -90 0")
 
