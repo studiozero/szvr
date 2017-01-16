@@ -1,5 +1,9 @@
 # @extraLRG
 
+# We DO NOT want to upload this to github!
+config.json
+aws-credentials.json
+
 # Webstorm project junk #
 #########################
 .idea/*
