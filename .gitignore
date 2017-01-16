@@ -3,6 +3,7 @@
 # We DO NOT want to upload this to github!
 config.json
 aws-credentials.json
+.s3cfg
 
 # Webstorm project junk #
 #########################
