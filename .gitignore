@@ -11,6 +11,7 @@ aws-credentials.json
 # Node & NPM junk #
 ###################
 npm-debug.log
+/node_modules
 
 # OS generated files #
 ######################
