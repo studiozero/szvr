@@ -1,9 +1,14 @@
-# @extraLRG
-
 # We DO NOT want to upload this to github!
 config.json
 aws-credentials.json
 .s3cfg
+
+## We'd prefer not to upload this to github!
+## Because draft work can occasionally be embarassing
+/src/blog/_drafts/*
+## Because this is the build folder
+/www
+
 
 # Webstorm project junk #
 #########################
