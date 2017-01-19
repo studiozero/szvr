@@ -1,0 +1,7 @@
+{
+  "_template" : "index.pug",
+  "attributes" : {
+    "title" : "Some title for the index page",
+    "author" : "@neilsen"
+  }
+}
