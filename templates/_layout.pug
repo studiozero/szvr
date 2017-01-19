@@ -1,11 +1,13 @@
 doctype
 html
 	head
-		- var site = {title: 'We are Studio Zero | Immersive Web', url: 'http://www.studiozero.co', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg', favicon: 'http://www.web-vr.xyz/assets/images/favicon.ico', description: 'We are Studio Zero | Immersive Web | VR | AR | MR | AI' }
+		- var site = {title: 'We are Studio Zero | Immersive Web', url: 'http://www.studiozero.co', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg', description: 'Studio Zero | Creative studio based in London, building Virtual, Augmented and Mixed reality experiences on the Web.',  }
 		each val, key in site
 			meta(property='og:'+'#{key}', content='#{val}')
 
-		- var tCard = { description: 'We are Studio Zero | Immersive Web | VR | AR | MR | AI', title:'We are Studio Zero | Immersive Web', site: '@studiozeroco', card: 'summary', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg'}
+		meta(property='fb:app_id', content='793071684157637')
+
+		- var tCard = { description: 'Studio Zero | Creative studio based in London, building Virtual, Augmented and Mixed reality experiences on the Web.', title:'We are Studio Zero | Immersive Web', site: '@studiozeroco', card: 'summary', image: 'http://www.studiozero.co/assets/images/studiozero_og1200x1200.jpg'}
 
 		each val, key in tCard
 			meta(name='twitter:'+'#{key}', content='#{val}')
@@ -14,7 +16,9 @@ html
 		link(rel="stylesheet" href="/main.css")
 		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat")
 		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind:300,400,700")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,400")
 		script(src="/assets/js/aframe-v0.4.0.min.js")
+		script(src="/assets/components/ground.js")
 		script(src="/assets/js/main.js")
 	body
 		!= yield
