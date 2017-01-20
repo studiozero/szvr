@@ -1,6 +1,6 @@
 {
   "_template" : "index.pug",
-  "attributes" : {
+  "_metadata" : {
     "title" : "Some title for the index page",
     "author" : "@neilsen"
   }

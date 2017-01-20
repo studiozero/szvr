@@ -43,13 +43,13 @@ var buildPaths = function (item, ext) {
 	newPathObj.ext = ext;
 	delete newPathObj.base;
 
-	var out = {
-		url : path.format(newPathObj),
-		renderPath : './www' + path.format(newPathObj),
+	var renderPath = path.format(newPathObj);
+
+	return {
+		url : renderPath,
+		renderPath : renderPath,
 		filePath : item.path
-	}
-	console.log('PATH BUILDER', out);
-	return out;
+	};
 }
 
 var shouldIgnore = function (item) {
@@ -68,18 +68,40 @@ var copyWholesale = function (item) {
 	return false;
 }
 
+var prepareData = function (paths, meta) {
+	// for the moment, we ONLY care about setting _template and _metadata
+
+	var defaultData = Object.assign({}, config.defaultData);
+	// make the _metadata url the full canonical site url
+	var newMeta = Object.assign({}, defaultData._metadata, meta);
+
+	var prepped = Object.assign({}, defaultData, {
+		"_metadata" : newMeta,
+		"_paths" : paths
+	});
+
+	prepped._metadata.url = config.canonicalRoot + paths.url;
+	// get the defaults
+
+	// return the 'default' + page data, ready for merge
+	return prepped;
+}
+
+var reader = new commonmark.Parser();
+var writer = new commonmark.HtmlRenderer();
+
 var getMarkdown = function (item) {
 
 	var file = fs.readFileSync(item.path, 'utf-8');
 	var frontMatter = fm(file);
 	var paths = buildPaths(item, '.html');
 
-	return Object.assign({}, frontMatter, paths, {format : 'markdown'});
+	return Object.assign({}, prepareData(paths, frontMatter.attributes), {
+		_format : 'markdown',
+		body : frontMatter.body
+	});
 };
 
-
-var reader = new commonmark.Parser();
-var writer = new commonmark.HtmlRenderer();
 
 var renderMarkdown = function (data) {
 
@@ -90,7 +112,6 @@ var renderMarkdown = function (data) {
 	return renderBlog(data); //output HTML
 };
 
-
 var isMarkdown = function (item) {
 	var mdExt  = [
 		".markdown", ".mdown", ".mkdn", ".mkd", ".md"
@@ -100,14 +121,13 @@ var isMarkdown = function (item) {
 
 var getSass = function (item) {
 	var paths = buildPaths(item, '.css');
-	return Object.assign({}, paths, {format : 'sass'});
+	return Object.assign({}, {_format : 'sass', _paths : paths});
 };
 
 var renderSass = function (data) {
 	return sass.renderSync({
-		file : data.filePath,
-		outFile : data.renderPath
-	});
+		file : data._paths.filePath
+	}).css;
 }
 
 var isSass = function (item) {
@@ -118,14 +138,17 @@ var isSass = function (item) {
 };
 
 var renderJSON = function (data) {
-	var json = data.data.data || {};
-	return templates[data.data._template](json);
+	console.log('----- RENDER JSON', data);
+	return templates[data._template](data);
 }
 
 var getJSON = function (item) {
-	var paths = buildPaths(item, '.html');
+	var paths = buildPaths(item, '.html'); // compiling to .html
 	var json = fs.readJsonSync(item.path);
-	return Object.assign({}, paths, {format : 'json', data : json});
+
+
+	return Object.assign({}, json, prepareData(paths, json._metadata), {_format : 'json'});
+
 }
 
 var isJSON = function (item) {

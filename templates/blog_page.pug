@@ -1,8 +1,8 @@
 html
     head
-        title #{attributes.title}
-        <meta name="description">#{attributes.description}</meta>
+        title #{_metadata.title}
+        <meta name="description">#{_metadata.description}</meta>
     body
-        h1 #{attributes.title}
-        .main(data-author!=`${attributes.author}`) !{rendered}
+        h1 #{_metadata.title}
+        .main(data-author!=`${_metadata.author}`) !{rendered}
         include footer.pug

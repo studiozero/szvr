@@ -35,17 +35,17 @@ var build = function () {
 
 			// so, from here, assume most things are markdown files, template, folders, images etc.
 			if(help.isMarkdown(item) ) {
-				console.log('* Render Markdown', item.path);
+				console.log('* Get Markdown data', item.path);
 				toRender.push(help.getMarkdown(item));
 			}
 
 			if(help.isSass(item)) {
-				console.log('* Render SASS', item.path);
+				console.log('* Get SASS data', item.path);
 				toRender.push(help.getSass(item));
 			}
 
 			if(help.isJSON(item)) {
-				console.log('* Render JSON to template');
+				console.log('* Get JSON data', item.path);
 				toRender.push(help.getJSON(item));
 			}
 
@@ -53,12 +53,11 @@ var build = function () {
 		})
 		.on('end', function () {
 			console.log('---------------');
-			console.log(JSON.stringify(toCopy));
 
 			// copy the standalone folders as they are
 			toCopy.forEach(function (dir) {
 				try {
-					//console.log('    * ', path.basename(dir))
+					console.log('* Copied', path.basename(dir));
 					fs.copySync(dir, `./www/${path.basename(dir)}`);
 				} catch (err) {
 					console.error('FAILED', err);
@@ -69,20 +68,21 @@ var build = function () {
 			toRender.forEach(function (data) {
 				var output;
 
-				switch (data.format) {
+				switch (data._format) {
 					case 'markdown' :
 						output = help.renderMarkdown(data);
 						break;
 					case 'sass' :
-						output = help.renderSass(data).css;
+						output = help.renderSass(data);
 						break;
 					case 'json' :
+						console.log('SO JSON');
 						output = help.renderJSON(data)
 						break;
 				}
 
-				console.log('    * RENDER', data.renderPath);
-				fs.outputFileSync(data.renderPath, output);
+				console.log('* Rendered', data._paths.renderPath);
+				fs.outputFileSync(data._paths.renderPath, output);
 			})
 
 
