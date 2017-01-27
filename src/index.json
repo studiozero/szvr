@@ -1,7 +1,4 @@
 {
   "_template" : "index.pug",
-  "_metadata" : {
-    "title" : "Some title for the index page",
-    "author" : "@neilsen"
-  }
+  "_metadata" : {}
 }

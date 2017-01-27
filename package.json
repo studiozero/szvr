@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js"
+    "build": "node build.js; cd ./www; python -m SimpleHTTPServer;",
+    "deploy" : "cd ./www; s3-upload; cd .."
   },
   "repository": {
     "type": "git",

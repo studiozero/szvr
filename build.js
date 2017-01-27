@@ -86,7 +86,6 @@ var build = function () {
 			})
 
 
-			// parse the md files
 			// if image is defined in frontmatter,
 			// find it and make all the versions for thumbnails,
 			// OG & Twitter cards etc.

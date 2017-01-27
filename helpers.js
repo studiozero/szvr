@@ -47,7 +47,7 @@ var buildPaths = function (item, ext) {
 
 	return {
 		url : renderPath,
-		renderPath : renderPath,
+		renderPath : config.wwwDir + renderPath,
 		filePath : item.path
 	};
 }

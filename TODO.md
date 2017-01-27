@@ -1,8 +1,26 @@
 # List of things to do, in no particular order.
 
-* Dev server : Do live & local what the builder does statically
+## Doing
+
 * Refactor to ensure config variables are used rather than hardcoded
+* CSS styles for blog
+* Modularise CSS styles
+* Modularise templates
+* Use SVG'd text for aframe header overlay
+-----
+
+## Still to do
+
+* Dev server : Do live & local what the builder does statically
 * Make the S3 sync betterer
 * Ensure S3 sync flushes CDN where appropriate
-* Get a default metadata config(s), and apply for twitter / OG / Amp etc. 
 * Server with SSL cert for https://
+* Actually deploy
+* Export data for a menu system
+
+
+----
+
+## Done
+ 
+* Get a default metadata config(s), and apply for twitter / OG / Amp etc.
