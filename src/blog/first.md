@@ -2,6 +2,7 @@
 title : "Being first"
 description : "This is what being first is all about"
 author : "@toychicken"
+date : "2017-6-13"
 ---
 
 # First!

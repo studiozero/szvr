@@ -6,7 +6,6 @@
 * CSS styles for blog
 * Modularise CSS styles
 * Modularise templates
-* Use SVG'd text for aframe header overlay
 -----
 
 ## Still to do
@@ -17,10 +16,12 @@
 * Server with SSL cert for https://
 * Actually deploy
 * Export data for a menu system
-
+* Check it's not exporting hidden folders like .git or .DS_store
+* Generate RSS for blog / 
 
 ----
 
 ## Done
  
 * Get a default metadata config(s), and apply for twitter / OG / Amp etc.
+* Use SVG'd text for aframe header overlay

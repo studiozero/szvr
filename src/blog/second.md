@@ -2,6 +2,7 @@
 title : "Always a bridesmaid"
 description : "Second is no fun"
 author : "@extraLRG"
+date : "2017-10-12"
 ---
 
 # Dillinger

@@ -6,10 +6,14 @@ const through2 = require('through2');
 const commonmark = require('commonmark');
 const fm = require('front-matter');
 const sass = require('node-sass');
+const moment = require('moment');
 
 const config = require('./config');
 
 var templates = {};
+var site_data = {
+	blog : []
+};
 
 var initTemplates = function (callback) {
 
@@ -82,6 +86,12 @@ var prepareData = function (paths, meta) {
 
 	prepped._metadata.url = config.canonicalRoot + paths.url;
 	// get the defaults
+	console.log('=====', prepped._metadata.url);
+
+	if(paths.url.indexOf('/blog/') >= 0){
+		// add as a blog item
+		site_data.blog.push(prepped);
+	};
 
 	// return the 'default' + page data, ready for merge
 	return prepped;
@@ -153,7 +163,22 @@ var getJSON = function (item) {
 
 var isJSON = function (item) {
 	return (path.extname(item.path) === '.json');
-}
+};
+
+var getSiteData = function () {
+
+	// get blog list in time order
+	site_data.blog.sort(function (a,b){
+		// older
+		if(moment(a._metadata.date) > moment(b._metadata.date)) return -1;
+		// younger
+		if(moment(a._metadata.date) < moment(b._metadata.date)) return 1;
+		// the same
+		return 0;
+	});
+
+	return site_data;
+};
 
 module.exports = {
 	isJSON : isJSON,
@@ -167,5 +192,6 @@ module.exports = {
 	renderMarkdown : renderMarkdown,
 	copyWholesale : copyWholesale,
 	shouldIgnore : shouldIgnore,
-	initTemplates : initTemplates
+	initTemplates : initTemplates,
+	getSiteData : getSiteData
 }

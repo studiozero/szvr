@@ -24,6 +24,7 @@ var build = function () {
 	klaw(config.srcDir, {filter : help.shouldIgnore})
 		.on('data', function (item) {
 
+
 			// if folder has index.html at the root, don't load anything, just store the reference for copying
 			if(help.copyWholesale(item)) {
 				// mark as 'to copy as is'
@@ -62,11 +63,14 @@ var build = function () {
 				} catch (err) {
 					console.error('FAILED', err);
 				}
-			})
+			});
+
+
 
 			// do the rendering of the markdowns
 			toRender.forEach(function (data) {
 				var output;
+				data._site_data = help.getSiteData();
 
 				switch (data._format) {
 					case 'markdown' :

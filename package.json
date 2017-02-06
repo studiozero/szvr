@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js; cd ./www; python -m SimpleHTTPServer;",
-    "deploy" : "cd ./www; s3-upload; cd .."
+    "deploy": "cd ./www; s3-upload; cd .."
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "fs-extra": "^2.0.0",
     "klaw": "^1.3.1",
     "klaw-sync": "^1.0.2",
+    "moment": "^2.17.1",
     "node-sass": "^4.3.0",
     "pug": "^2.0.0-beta6",
     "through2": "^2.0.3"
