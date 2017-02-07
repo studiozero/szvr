@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event){
+	console.log('DOM ready');
 
 	var cameraAnimation = document.querySelector('#camera-animation');
 	var title = document.querySelector('.intro');

@@ -1,16 +1,36 @@
-nav#navigation
-    div.container
-        svg.header-logo(viewbox='0 0 772.48 316.87')
-            g
-                path(d='M512,645.84L359.32,381.37H664.71Zm-141.56-258L512,633,653.58,387.8H370.45Z', transform='translate(-127.06 -328.97)')
-                path(d='M899.54,593.45H594.15L746.85,329ZM605.28,587H888.41L746.85,341.82Z', transform='translate(-127.06 -328.97)')
-                path(d='M432.45,593.45H127.06L279.76,329ZM138.19,587H421.32L279.76,341.82Z', transform='translate(-127.06 -328.97)')
-        ul.nav-right
-            li
-                a(href="http://www.medium.com/studio-zero") Blog
-            li
-                a(href="http://www.facebook.com/wearestudiozero") Facebook
-            li
-                a(href="http://www.instagram.com/wearestudiozero") Instagram
-            li
-                a(href="http://www.twitter.com/studiozeroco") Twitter
+nav.navbar.navbar-inverse
+    .container-fluid
+        .navbar-header
+            button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href="/")
+                svg.header-logo(viewbox='0 0 772.48 316.87')
+                    g
+                        path(d='M512,645.84L359.32,381.37H664.71Zm-141.56-258L512,633,653.58,387.8H370.45Z', transform='translate(-127.06 -328.97)')
+                        path(d='M899.54,593.45H594.15L746.85,329ZM605.28,587H888.41L746.85,341.82Z', transform='translate(-127.06 -328.97)')
+                        path(d='M432.45,593.45H127.06L279.76,329ZM138.19,587H421.32L279.76,341.82Z', transform='translate(-127.06 -328.97)')
+                            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+
+            ul.nav.navbar-nav.navbar-right
+                li.dropdown
+                    a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Blog
+                        span.caret
+                    ul.dropdown-menu
+                        - var top = _site_data.blog.slice(0,3);
+                        each post in top
+                            li.post
+                                a(href=post._metadata.absoluteURL title=post._metadata.sell)= post._metadata.title
+                        li.divider(role="separator")
+                        li
+                            a(href="https://medium.com/studio-zero") Medium
+                li
+                    a(href="http://www.facebook.com/wearestudiozero") Facebook
+                li
+                    a(href="http://www.instagram.com/wearestudiozero") Instagram
+                li
+                    a(href="http://www.twitter.com/studiozeroco") Twitter

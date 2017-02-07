@@ -21,61 +21,20 @@ html,body{
   margin:0;
   padding:0;
   color:#191919;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif
 }
-
-.container{
-  width:80%;
-  margin:auto;
-  overflow: hidden;
+svg {
+  fill : #fff;
+  stroke : none;
 }
-
-nav{
-
-
-  background:rgba(255,255,255,0.5);
-
-  ul{
-    margin:0;
-    padding:0;
-    list-style: none;
-    float:right;
-
-    li{
-      float: left;
-    }
-
-    a{
-      color:black;
-      text-decoration:none;
-      text-transform: uppercase;
-      padding:15.5px;
-      display: block;
-    }
-  }
-}
-
-#navigation{
-  display: none;
-  height:50px;
-  width: 100%;
-  z-index: 5;
-  position:fixed;
-
-  .header-logo{
-    position:absolute;
-    top:5;
-    height:100%;
-    width:80px;
-    fill:black;
-    float:left;
+.navbar {
+  border-radius : 0;
+  margin-bottom : 0;
+  .navbar-brand {
+    width : 80px;
   }
 
-  @media(min-width:500px){
-    display: block;
-  }
 }
-
 
 .home-header{
   height:80vh;
@@ -100,10 +59,6 @@ nav{
 
   font-size: 50px;
 
-  svg {
-    fill : #fff;
-    stroke : none;
-  }
 
   @media (min-width: 720px) {
     font-size: 100px;
@@ -163,7 +118,7 @@ p.intro{
   }
 
   .body{
-    font-family: 'Hind';
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
     font-weight:300;
     width: 100%;
     margin: auto;
@@ -268,4 +223,30 @@ footer{
   .vrara img{
     max-width: 100%;
   }
+}
+
+.blog-page {
+  .jumbotron {
+    background : grey url() no-repeat scroll center center;
+    background-size: cover;
+  }
+}
+.markdown {
+  font-size: 20px;
+  font-family: 'Georgia', "Times New Roman", serif;
+  line-height : 1.4;
+  h1,h2,h3 {
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+    margin-top : 1.2em;
+    font-weight : bold;
+  }
+  p, ul {
+    margin-top : 1.2em;
+  }
+
+  img {
+    margin : 1em auto;
+  }
+
+
 }

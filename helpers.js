@@ -70,7 +70,23 @@ var copyWholesale = function (item) {
 		}
 	}
 	return false;
-}
+};
+
+var prepareMainImage = function (imageStr) {
+
+	// set background image style
+	if(imageStr) {
+		// is it a hex colour or gradient?
+		if(imageStr.indexOf('#') === 0) {
+			// it's a color
+			return `background-color : ${imageStr};`;
+		} else {
+			// assume it's a nice big image
+			return `background-image : url(/assets/images/${imageStr})`;
+		}
+	}
+	return '';
+};
 
 var prepareData = function (paths, meta) {
 	// for the moment, we ONLY care about setting _template and _metadata
@@ -84,9 +100,11 @@ var prepareData = function (paths, meta) {
 		"_paths" : paths
 	});
 
-	prepped._metadata.url = config.canonicalRoot + paths.url;
+	prepped._metadata.canonicalURL = config.canonicalRoot + paths.url;
+	prepped._metadata.absoluteURL = paths.url;
 	// get the defaults
-	console.log('=====', prepped._metadata.url);
+
+	prepped._metadata.imageStyle = prepareMainImage(prepped._metadata.image);
 
 	if(paths.url.indexOf('/blog/') >= 0){
 		// add as a blog item
@@ -169,6 +187,9 @@ var getSiteData = function () {
 
 	// get blog list in time order
 	site_data.blog.sort(function (a,b){
+		if(!a._metadata.date || !b._metadata.date) {
+			return 0;
+		}
 		// older
 		if(moment(a._metadata.date) > moment(b._metadata.date)) return -1;
 		// younger

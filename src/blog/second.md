@@ -1,8 +1,9 @@
 ---
 title : "Always a bridesmaid"
-description : "Second is no fun"
 author : "@extraLRG"
 date : "2017-10-12"
+description : "Sometimes it is better to have loved and lost, than never to have loved at all. Or, you could just annihilate the bitch"
+image : "reflect.png"
 ---
 
 # Dillinger
