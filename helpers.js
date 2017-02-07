@@ -82,7 +82,7 @@ var prepareMainImage = function (imageStr) {
 			return `background-color : ${imageStr};`;
 		} else {
 			// assume it's a nice big image
-			return `background-image : url(/assets/images/${imageStr})`;
+			return `background-image : url(/assets/images/${imageStr}); background-size: cover;`;
 		}
 	}
 	return '';
