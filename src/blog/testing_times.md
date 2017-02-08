@@ -1,14 +1,12 @@
 ---
 date : "2015-02-10T10:00:00Z"
-image : "#fc0"
+image : "pies.jpg"
 title : "Testing times"
 sell : "When was the last time you were tested?"
 summary : "If your delivery team are not testing product, then they’re exposing your business to some serious risks."
 description : "Here’s why you should test, in the form of a story about pies. Oh, and there may be some time-travel."
 ---
-![Image](https://cdn-images-1.medium.com/max/1600/1*mHI3MqdwECoA8Q1HSzPevQ.jpeg)
 
-# Testing times
 
 Today, I want to talk to you about testing. No, not to your tech team, to ***you***, the business owner.
 

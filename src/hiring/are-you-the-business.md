@@ -1,6 +1,6 @@
 ---
 date : "2017-02-08T12:20:00Z"
-image : "_originals/AdobeStock_112133130.jpeg"
+image : "AdobeStock_112133130.jpeg"
 title : "Are you the business?"
 sell : "Studio Zero is hiring"
 summary : "Studio Zero is looking for a business development lead"

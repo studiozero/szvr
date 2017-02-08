@@ -55,16 +55,6 @@ var build = function () {
 		.on('end', function () {
 			console.log('---------------');
 
-			// copy the standalone folders as they are
-			toCopy.forEach(function (dir) {
-				try {
-					//console.log('* Copied', path.basename(dir));
-					fs.copySync(dir, `./www/${path.basename(dir)}`);
-				} catch (err) {
-					console.error('FAILED', err);
-				}
-			});
-
 			// do the rendering of the markdowns
 			toRender.forEach(function (data) {
 				var output;
@@ -99,10 +89,24 @@ var build = function () {
 				if(err) {
 					console.error('### Failed at the last hurdle');
 				} else {
-					console.log('### Success');
-					console.log('Now do `npm run deploy` to push online');
 				}
 			});
+
+
+			// copy the standalone folders as they are
+			toCopy.forEach(function (dir) {
+				//console.log('* Copied', path.basename(dir));
+				fs.copy(dir, `./www/${path.basename(dir)}`, function (err) {
+					if (err) {
+						console.error('FAIL', err);
+					} else {
+
+						console.log('### Success');
+						console.log('Now do `npm run deploy` to push online');
+					}
+				});
+			});
+
 		});
 
 };

@@ -18,28 +18,13 @@ html(⚡ lang="en")
 
     body.blog-page
         include _main_menu.pug
-        .jumbotron(style!=`${_metadata.imageStyle}`)
+        .jumbotron(style!=`${_metadata.imageData.bgStyle}`)
             .container
                 h1: span #{_metadata.title}
                 p: span= _metadata.description
         .container
             .main.row
                 .col-md-8.longform(data-author!=`${_metadata.author}`) !{rendered}
-                .col-md-4
-                    h2 On the blog
-                    .row
-                        - var n = 0;
-                        - var p = 0;
-                        while p < 3 && n < _site_data.blog.length
-                            - var post = _site_data.blog[n]
-                            - var test = (post._metadata.title !== _metadata.title)
-
-                            if test
-                                .post.col-xs-12.col-sm-4.col-md-12
-                                    include _partials/_blog_card.pug
-                                - n++
-                                - p++
-                            else
-                                - n++
+                include _sidebar.pug
 
         include footer.pug

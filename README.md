@@ -82,3 +82,9 @@ The minimum that it needs is the `"_template"` node, but if that template includ
 ### YAML
 
 We use frontmatter YAML in the markdown files to pass on additional data to the publishing system.
+
+### Images
+ 
+Store (and reference) images for your pages in the `/src/_artwork/` folder. When you build the site, it'll automatically create optimised versions of the images for deployment. 
+
+**NB** If you need to re-do the image generation for some reason, remove it's auto-generated `.json` file.

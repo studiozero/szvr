@@ -9,6 +9,7 @@ const sass = require('node-sass');
 const moment = require('moment');
 
 const config = require('./config');
+const imagePrep = require('./image-prep.js');
 
 var templates = {};
 var site_data = {
@@ -72,22 +73,6 @@ var copyWholesale = function (item) {
 	return false;
 };
 
-var prepareMainImage = function (imageStr) {
-
-	// set background image style
-	if(imageStr) {
-		// is it a hex colour or gradient?
-		if(imageStr.indexOf('#') === 0) {
-			// it's a color
-			return `background-color : ${imageStr};`;
-		} else {
-			// assume it's a nice big image
-			return `background-image : url(/assets/images/${imageStr}); background-size: cover;`;
-		}
-	}
-	return '';
-};
-
 var prepareData = function (paths, meta) {
 	// for the moment, we ONLY care about setting _template and _metadata
 
@@ -104,7 +89,7 @@ var prepareData = function (paths, meta) {
 	prepped._metadata.absoluteURL = paths.url;
 	// get the defaults
 
-	prepped._metadata.imageStyle = prepareMainImage(prepped._metadata.image);
+	prepped._metadata.imageData = imagePrep(prepped._metadata.image);
 
 	if(paths.url.indexOf('/blog/') >= 0){
 		// add as a blog item

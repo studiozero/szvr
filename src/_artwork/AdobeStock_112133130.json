@@ -1,0 +1,15 @@
+{
+  "original": "AdobeStock_112133130.jpeg",
+  "path": {
+    "root": "",
+    "dir": "",
+    "base": "AdobeStock_112133130.jpeg",
+    "ext": ".jpeg",
+    "name": "AdobeStock_112133130"
+  },
+  "bgStyle": "background-image : url(/assets/generated/AdobeStock_112133130@scaled.jpeg); background-size: cover;",
+  "url": "/assets/generated/AdobeStock_112133130@scaled.jpeg",
+  "fbUrl": "http://studiozero.co/assets/generated/AdobeStock_112133130@1200x1200.jpeg",
+  "twUrl": "http://studiozero.co/assets/generated/AdobeStock_112133130@560x300.jpeg",
+  "ampUrl": "http://studiozero.co/assets/generated/AdobeStock_112133130@928x520.jpeg"
+}
