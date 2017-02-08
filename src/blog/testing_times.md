@@ -6,6 +6,8 @@ sell : "When was the last time you were tested?"
 summary : "If your delivery team are not testing product, then they’re exposing your business to some serious risks."
 description : "Here’s why you should test, in the form of a story about pies. Oh, and there may be some time-travel."
 ---
+![Image](https://cdn-images-1.medium.com/max/1600/1*mHI3MqdwECoA8Q1HSzPevQ.jpeg)
+
 # Testing times
 
 Today, I want to talk to you about testing. No, not to your tech team, to ***you***, the business owner.
@@ -35,7 +37,7 @@ You work out all the logistics of pie manufacture. You source organic, fair-trad
 
 Except you _forgot to test your pie with your customers_. If you had spent _one day_ doing customer testing, you’d have realised that a Salmon & Custard pie was never going to sell. Not one pie. Except perhaps to your great-grandmother, but she’s dead. As is your business.
 
-<img class="progressiveMedia-image js-progressiveMedia-image" data-src="https://cdn-images-1.medium.com/max/1600/1*3XUzEBhLEHSO8A2bZUtG8g.jpeg" src="https://cdn-images-1.medium.com/max/1600/1*3XUzEBhLEHSO8A2bZUtG8g.jpeg">
+<center><img class="progressiveMedia-image js-progressiveMedia-image" data-src="https://cdn-images-1.medium.com/max/1600/1*3XUzEBhLEHSO8A2bZUtG8g.jpeg" src="https://cdn-images-1.medium.com/max/1600/1*3XUzEBhLEHSO8A2bZUtG8g.jpeg"></center>
 
 Thankfully, we can rewind time&hellip; As you start your pie business, you open up a market stall and have your chef bake a small batch of pies and give them to passers-by. Salmon and custard does not go down well. But your Chicken & Tarragon and Beef & Horseradish pies go down a treat. Hoorah! You’re now on the road to success!
 
