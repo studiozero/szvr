@@ -31,7 +31,7 @@ html(amp, lang="en")
                         - var p = 0;
                         while p < 3
                             - var post = _site_data.blog[n]
-                            - var test = (post._metadata.title !== _metadata.title)
+                            - var test = (post && post._metadata && post._metadata.title !== _metadata.title)
 
                             if test
                                 .post.col-xs-12.col-sm-4.col-md-12
