@@ -1,0 +1,16 @@
+@import "_fonts.scss";
+
+.longform {
+  font-family : $family_serif;
+  font-size: 20px;
+  line-height : 1.4;
+  h1,h2,h3 {
+    font-family: $family_sans;
+    margin-top : 1.2em;
+    font-weight : bold;
+  }
+  p, ul {
+    margin-top : 1.2em;
+    letter-spacing: 0.2px;
+  }
+}

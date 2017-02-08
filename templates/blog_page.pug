@@ -7,7 +7,7 @@ html(amp, lang="en")
         //include _meta_amp
 
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
-        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind")
+        include _standard_fonts
         link(rel="stylesheet" href="/main.css")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
         script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
@@ -23,8 +23,22 @@ html(amp, lang="en")
                 p= _metadata.description
         .container
             .main.row
-                .col-md-8.markdown(data-author!=`${_metadata.author}`) !{rendered}
+                .col-md-8.longform(data-author!=`${_metadata.author}`) !{rendered}
                 .col-md-4
                     h2 On the blog
+                    .row
+                        - var n = 0;
+                        - var p = 0;
+                        while p < 3
+                            - var post = _site_data.blog[n]
+                            - var test = (post._metadata.title !== _metadata.title)
+
+                            if test
+                                .post.col-xs-12.col-sm-4.col-md-12
+                                    a(href=post._metadata.absoluteURL title=post._metadata.sell)= post._metadata.title
+                                - n++
+                                - p++
+                            else
+                                - n++
 
         include footer.pug

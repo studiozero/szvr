@@ -1,3 +1,7 @@
+@import "./_scss/_longform.scss"; // for blog or markdown content;
+
+
+
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -21,7 +25,6 @@ html,body{
   margin:0;
   padding:0;
   color:#191919;
-  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif
 }
 svg {
   fill : #fff;
@@ -35,6 +38,7 @@ svg {
   }
 
 }
+
 
 .home-header{
   height:80vh;
@@ -54,7 +58,6 @@ svg {
   margin:0;
   width:100%;
   color:#bdbdbd;
-  font-family: 'Nunito Sans';
   font-weight: 200;
 
   font-size: 50px;
@@ -118,7 +121,6 @@ p.intro{
   }
 
   .body{
-    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
     font-weight:300;
     width: 100%;
     margin: auto;
@@ -192,33 +194,12 @@ p.intro{
 footer{
   background:#242529;
   color:white;
-  overflow: hidden;
-  padding: 2rem 20px;
 
-  @media(min-width:720px){
-    padding: 8em 90px;
+  a{
+    color:#2cfdc9;
+    text-decoration-style: none;
   }
 
-  div{
-    float: left;
-
-    width:100%;
-    text-align:center;
-
-    @media(min-width:720px){
-      width:25%;
-      text-align:left;
-    }
-  
-  }
-
-
-  .social{
-    a{
-      color:#2cfdc9;
-      text-decoration-style: none;
-    }
-  }
 
   .vrara img{
     max-width: 100%;
@@ -229,23 +210,4 @@ footer{
   .jumbotron {
     background : #ede9e9 url(/assets/images/vr-patterns.png) repeat scroll center center;
   }
-}
-.markdown {
-  font-size: 20px;
-  font-family: 'Georgia', "Times New Roman", serif;
-  line-height : 1.4;
-  h1,h2,h3 {
-    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
-    margin-top : 1.2em;
-    font-weight : bold;
-  }
-  p, ul {
-    margin-top : 1.2em;
-  }
-
-  img {
-    margin : 1em auto;
-  }
-
-
 }
