@@ -1,0 +1,27 @@
+@import "longform";
+@import "blog_card";
+
+
+.jumbotron {
+  h1 {
+    transform : rotate(-1deg);
+    margin-bottom: 0.3em;
+  }
+  p {
+    transform : rotate(1deg);
+  }
+  span {
+    background : black;
+    color : white;
+    padding : 3px;
+
+    &:before,
+    &:after {
+      content : '-';
+      color: transparent;
+    }
+  }
+  p span {
+    font-family : "Courier New", "Courier", monospace;
+  }
+}

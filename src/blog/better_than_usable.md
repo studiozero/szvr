@@ -2,13 +2,13 @@
 date : "2015-01-08T12:20:00Z"
 image : "#fc0"
 title : "Better than usable"
-sell : "Why 'usable' is inadequate"
-summary : "Why 'usabled' is inadequate"
+sell : "Why ‘usable’ is inadequate"
+summary : "Why ‘usable’ is inadequate"
 description : "To me, saying an app is ‘usable’ is on a par with saying a meal was ‘edible’ — hardly a ringing endorsement..."
 ---
 # Better than usable?
 
-Yet again, I find myself coming up against using the word ‘usable’ to describe an application.
+Yet again, I find myself coming up against using the word 'usable' to describe an application.
 To me, saying an app is ‘usable’ is on a par with saying a meal was ‘edible’ — hardly a ringing endorsement, and simply saying an app is ‘really usable’ doesn’t really sound much better, does it? Try it, in this scenario.
 Your mum has just cooked you your favourite dinner. After wolfing it down, you lean back in your chair, wipe your grinning face with a napkin and say to your mother (who has slaved all day to produce this meal).
 

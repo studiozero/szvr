@@ -132,7 +132,6 @@ var getMarkdown = function (item) {
 
 
 var renderMarkdown = function (data) {
-
 	// crackers commonmark implementation of handling markdown (I like it)
 	var parsed = reader.parse(data.body);
 	data.rendered = writer.render(parsed);

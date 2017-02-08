@@ -41,12 +41,12 @@ var build = function () {
 			}
 
 			if(help.isSass(item)) {
-				//console.log('* Get SASS data', item.path);
+				console.log('* Get SASS data', item.path);
 				toRender.push(help.getSass(item));
 			}
 
 			if(help.isJSON(item)) {
-				//console.log('* Get JSON data', item.path);
+				console.log('* Get JSON data', item.path);
 				toRender.push(help.getJSON(item));
 			}
 
@@ -64,8 +64,6 @@ var build = function () {
 					console.error('FAILED', err);
 				}
 			});
-
-
 
 			// do the rendering of the markdowns
 			toRender.forEach(function (data) {
