@@ -29,9 +29,9 @@ html(amp, lang="en")
                     .row
                         - var n = 0;
                         - var p = 0;
-                        while p < 3
+                        while p < 3 && n < _site_data.blog.length
                             - var post = _site_data.blog[n]
-                            - var test = (post && post._metadata && post._metadata.title !== _metadata.title)
+                            - var test = (post._metadata.title !== _metadata.title)
 
                             if test
                                 .post.col-xs-12.col-sm-4.col-md-12

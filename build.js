@@ -41,12 +41,12 @@ var build = function () {
 			}
 
 			if(help.isSass(item)) {
-				console.log('* Get SASS data', item.path);
+				//console.log('* Get SASS data', item.path);
 				toRender.push(help.getSass(item));
 			}
 
 			if(help.isJSON(item)) {
-				console.log('* Get JSON data', item.path);
+				//console.log('* Get JSON data', item.path);
 				toRender.push(help.getJSON(item));
 			}
 
@@ -58,7 +58,7 @@ var build = function () {
 			// copy the standalone folders as they are
 			toCopy.forEach(function (dir) {
 				try {
-					console.log('* Copied', path.basename(dir));
+					//console.log('* Copied', path.basename(dir));
 					fs.copySync(dir, `./www/${path.basename(dir)}`);
 				} catch (err) {
 					console.error('FAILED', err);
@@ -80,7 +80,6 @@ var build = function () {
 						output = help.renderSass(data);
 						break;
 					case 'json' :
-						console.log('SO JSON');
 						output = help.renderJSON(data)
 						break;
 				}

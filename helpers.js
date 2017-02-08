@@ -17,7 +17,7 @@ var site_data = {
 
 var initTemplates = function (callback) {
 
-	klaw(config.templateDir)
+	klaw(config.templateDir, {filter : shouldIgnore})
 		.on('data', function (item) {
 			// check it's a template
 			if(path.extname(item.path) === '.pug') {
@@ -166,7 +166,7 @@ var isSass = function (item) {
 };
 
 var renderJSON = function (data) {
-	console.log('----- RENDER JSON', data);
+	console.log('----- RENDER JSON', JSON.stringify(data));
 	return templates[data._template](data);
 }
 
