@@ -1,0 +1,6 @@
+.panel.panel-default
+    .panel-heading(style!=`${post._metadata.imageStyle}`)
+        h4
+            a(href=post._metadata.absoluteURL title=post._metadata.sell)= post._metadata.title
+    .panel-body= post._metadata.description
+

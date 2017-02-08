@@ -1,6 +1,6 @@
 {
   "name": "szvr",
-  "version": "1.0.0",
+  "version": "0.0.14",
   "description": "Studio Zero Homepage",
   "keywords": [],
   "author": "Shaun Dunne, Leigh Garland",
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
-    "deploy": "cd ./www; s3-upload; cd ..",
+    "deploy": "npm patch; cd ./www; s3-upload; cd ..",
     "template:watch": "watch 'node build.js' ./templates",
     "src:watch": "watch 'node build.js' ./src"
   },

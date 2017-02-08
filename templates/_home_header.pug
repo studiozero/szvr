@@ -9,9 +9,9 @@ header.home-header
             img#reflect(src="/assets/images/reflect.png")
 
         a-entity#logo(position="0 1.8 -8")
-            a-entity#one(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" scale="5 5 5" position="-7.5 1 -11.35" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="30 90 90")
-            a-entity#two(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" position="0 0.23 4" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="90 90 90")
-            a-entity#three(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" scale="2 2 2" position="3 0.3 0" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="30 90 90")
+            a-entity#one(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" scale="5 5 5"   position="-7.5 1 8.65" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="30 90 90")
+            a-entity#two(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3"                 position="0 0.23 24" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="90 90 90")
+            a-entity#three(geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" scale="2 2 2" position="3 0.3 20" material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" rotation="30 90 90")
 
         a-entity(ground)
 
@@ -19,7 +19,7 @@ header.home-header
 
         a-entity(light="type: ambient; color: white")
 
-        a-entity#peep(position="0 0 -40" rotation="0 90 0")
-            a-animation(attribute="position" dur="10000" fill="forwards" to="0 0 0")
-            a-animation#camera-animation(attribute="rotation" delay="5000" dur="2000" fill="forwards" to="0 0 0")
+        a-entity#peep(position="0 2.5 -10" rotation="0 90 0")
+            a-animation(attribute="position" dur="10000" fill="forwards" to="0 0 19.5")
+            a-animation#camera-animation(attribute="rotation" delay="5000" dur="2000" fill="forwards" to="1.6 0 0")
             a-camera
