@@ -89,7 +89,7 @@ var prepareData = function (paths, meta) {
 	prepped._metadata.absoluteURL = paths.url;
 	// get the defaults
 
-	prepped._metadata.imageData = imagePrep(prepped._metadata.image);
+	prepped._metadata.imageData = imagePrep.setImageData(prepped._metadata.image);
 
 	if(paths.url.indexOf('/blog/') >= 0){
 		// add as a blog item

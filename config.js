@@ -9,27 +9,31 @@ var templateExt = '.pug';
 var canonicalRoot = 'http://studiozero.co';
 var datePattern = 'MMM do, YYYY'; // follows momentjs date formatting - https://momentjs.com/docs/#/parsing/string-format/
 var version = info.version || 0;
-
+var artworkSrc = './artwork';
 // image presets
 var imagePresets = {
-	main : {
+	img : {
 		width : 1200,
 		height : 500,
+		prefix : '',
 		suffix : '@scaled'
 	},
 	fb : {
 		width : 1200,
 		height : 1200,
+		prefix : canonicalRoot,
 		suffix : '@1200x1200'
 	},
 	tw : {
 		width : 560,
 		height : 300,
+		prefix : canonicalRoot,
 		suffix : '@560x300'
 	},
 	amp : {
 		width : 1392,
 		height : 780,
+		prefix : canonicalRoot,
 		suffix : '@1392x780'
 	}
 }
@@ -60,5 +64,6 @@ module.exports = {
 	canonicalRoot : canonicalRoot,
 	datePattern : datePattern,
 	version : version,
+	artworkSrc : artworkSrc,
 	imagePresets : imagePresets
 }

@@ -8,6 +8,8 @@ aws-credentials.json
 /src/blog/_drafts/*
 ## Because this is the build folder
 /www
+## Because we want an artwork folder, but not the artwork
+/artwork/**
 
 
 # Webstorm project junk #

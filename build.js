@@ -6,6 +6,8 @@ const through2 = require('through2');
 
 const config = require('./config');
 const help = require('./helpers');
+const imagePrep = require('./image-prep.js');
+
 
 // Start here
 
@@ -96,17 +98,16 @@ var build = function () {
 			// copy the standalone folders as they are
 			toCopy.forEach(function (dir) {
 				//console.log('* Copied', path.basename(dir));
-				fs.copy(dir, `./www/${path.basename(dir)}`, function (err) {
-					if (err) {
-						console.error('FAIL', err);
-					} else {
+				try {
+					fs.copySync(dir, `./www/${path.basename(dir)}`);
+					console.log('### Copied', path.basename(dir));
 
-						console.log('### Success');
-						console.log('Now do `npm run deploy` to push online');
-					}
-				});
+				} catch (err) {
+					console.error('FAIL', err);
+				}
 			});
-
+			// Move images
+			imagePrep.produce();
 		});
 
 };
