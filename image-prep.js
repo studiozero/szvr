@@ -28,7 +28,7 @@ var setImageData = function (imageStr) {
 	var someImageFile;
 	try {
 		someImageFile = fs.readJsonSync(`./src/assets/generated/${imageData.path.name}.json`);
-		console.log('Existing image data: ', someImageFile);
+		console.log(`Images already generated, remove ./src/assets/generated/${imageData.path.name}.json if you need to regenerate from source`);
 		imageData = Object.assign({}, imageData, someImageFile);
 		alreadyGenerated = true;
 	} catch (err) {

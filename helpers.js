@@ -12,11 +12,13 @@ const config = require('./config');
 const imagePrep = require('./image-prep.js');
 
 var templates = {};
-var site_data = {
-	blog : []
-};
+var site_data = {};
 
 var initTemplates = function (callback) {
+
+	config.topLevelFolders.forEach(function (submenu) {
+		site_data[submenu.dir] = Object.assign({}, submenu, {contents : []});
+	});
 
 	klaw(config.templateDir, {filter : shouldIgnore})
 		.on('data', function (item) {
@@ -38,7 +40,7 @@ var initTemplates = function (callback) {
 };
 
 
-const renderBlog = pug.compileFile('./templates/blog_page.pug');
+const renderStandardPage = pug.compileFile('./templates/blog_page.pug');
 
 
 var buildPaths = function (item, ext) {
@@ -91,10 +93,13 @@ var prepareData = function (paths, meta) {
 
 	prepped._metadata.imageData = imagePrep.setImageData(prepped._metadata.image);
 
-	if(paths.url.indexOf('/blog/') >= 0){
-		// add as a blog item
-		site_data.blog.push(prepped);
-	};
+	for(key in site_data) {
+		var submenu = site_data[key];
+		if(paths.url.indexOf(`/${submenu.dir}/`) >= 0){
+			// add as a blog item
+			submenu.contents.push(prepped);
+		}
+	}
 
 	// return the 'default' + page data, ready for merge
 	return prepped;
@@ -121,7 +126,7 @@ var renderMarkdown = function (data) {
 	var parsed = reader.parse(data.body);
 	data.rendered = writer.render(parsed);
 
-	return renderBlog(data); //output HTML
+	return renderStandardPage(data); //output HTML
 };
 
 var isMarkdown = function (item) {
@@ -167,9 +172,8 @@ var isJSON = function (item) {
 };
 
 var getSiteData = function () {
-
 	// get blog list in time order
-	site_data.blog.sort(function (a,b){
+	site_data.blog.contents.sort(function (a,b){
 		if(!a._metadata.date || !b._metadata.date) {
 			return 0;
 		}

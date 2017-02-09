@@ -10,6 +10,12 @@ var canonicalRoot = 'http://studiozero.co';
 var datePattern = 'MMM do, YYYY'; // follows momentjs date formatting - https://momentjs.com/docs/#/parsing/string-format/
 var version = info.version || 0;
 var artworkSrc = './artwork';
+
+// folders (from ./src) that should appear in the menu, and the 'display' name for them
+var topLevelFolders = [
+	{dir : 'hiring', title: 'We\'re hiring!'},
+	{dir : 'blog',   title : 'Blog'}
+]
 // image presets
 var imagePresets = {
 	img : {
@@ -65,5 +71,6 @@ module.exports = {
 	datePattern : datePattern,
 	version : version,
 	artworkSrc : artworkSrc,
+	topLevelFolders : topLevelFolders,
 	imagePresets : imagePresets
 }

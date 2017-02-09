@@ -16,17 +16,9 @@ nav.navbar.navbar-inverse
         .collapse.navbar-collapse#bs-example-navbar-collapse-1
 
             ul.nav.navbar-nav.navbar-right
-                li.dropdown
-                    a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Blog
-                        span.caret
-                    ul.dropdown-menu
-                        - var top = _site_data.blog.slice(0,3);
-                        each post in top
-                            li.post
-                                a(href=post._metadata.absoluteURL title=post._metadata.sell)= post._metadata.title
-                        li.divider(role="separator")
-                        li
-                            a(href="https://medium.com/studio-zero") Medium
+                include _submenus.pug
+                li
+                    a(href="https://medium.com/studio-zero") Medium
                 li
                     a(href="http://www.facebook.com/wearestudiozero") Facebook
                 li

@@ -1,0 +1,10 @@
+
+each topLevel in _site_data
+    li.dropdown
+        a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")= topLevel.title
+            span.caret
+        ul.dropdown-menu
+            - var top = topLevel.contents.slice(0,3);
+            each post in top
+                li.post
+                    a(href=post._metadata.absoluteURL title=post._metadata.sell)= post._metadata.title

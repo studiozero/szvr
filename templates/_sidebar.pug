@@ -3,8 +3,8 @@ aside.col-md-4
     .row
         - var n = 0;
         - var p = 0;
-        while p < 3 && n < _site_data.blog.length
-            - var post = _site_data.blog[n]
+        while p < 3 && n < _site_data.blog.contents.length
+            - var post = _site_data.blog.contents[n]
             - var test = (post._metadata.title !== _metadata.title)
 
             if test
