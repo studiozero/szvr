@@ -1,6 +1,6 @@
 module.exports = {
 	credentials:"../aws-credentials.json",
-	bucketName:"szvr",
+	bucketName:"studiozero.co",
 	patterns:[
 		"*.html",
 		"*.css",
