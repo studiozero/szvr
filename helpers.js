@@ -150,7 +150,6 @@ var isSass = function (item) {
 };
 
 var renderJSON = function (data) {
-	console.log('----- RENDER JSON', JSON.stringify(data));
 	return templates[data._template](data);
 }
 

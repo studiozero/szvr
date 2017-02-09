@@ -28,9 +28,9 @@ var imagePresets = {
 		suffix : '@560x300'
 	},
 	amp : {
-		width : 928,
-		height : 520,
-		suffix : '@928x520'
+		width : 1392,
+		height : 780,
+		suffix : '@1392x780'
 	}
 }
 

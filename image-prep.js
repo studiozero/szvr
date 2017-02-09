@@ -6,7 +6,7 @@ const config = require('./config');
 
 // NB If you're trying to re-do the image, remove the .json from the _originals folder for the image
 
-// TODO - Test for existing image, and create callback so that generated images are copied over OR generate them into the right place!
+// TODO - create callback so that generated images are copied over OR generate them into the right place!
 
 var generateImage = function (imageData, type = 'main') {
 	// find the image
@@ -18,29 +18,24 @@ var generateImage = function (imageData, type = 'main') {
 		console.error('Image resize does not recognise an image preset for : ', type);
 		return false;
 	}
-	var original = gm('./src/_artwork/' + imageData.path.base)
-	original.size(function (err, size) {
-		if(err) {
-			console.error(err);
-			return false;
-		}
-		switch (type) {
-			case 'amp':
-			case 'tw' :
-			case 'fb' :
-				original.resize(i.width, i.height, '^')
-					.gravity('Center')
-					.crop(i.width, i.height)
-				break;
-			default :
-				original.resize(i.width,i.height, '^')
-				break;
-		}
+	var original = gm('./src/_artwork/' + imageData.path.base);
+	switch (type) {
+		case 'amp':
+		case 'tw' :
+		case 'fb' :
+			original.resize(i.width, i.height, '^')
+				.gravity('Center')
+				.crop(i.width, i.height)
+			break;
+		default :
+			original.resize(i.width,i.height, '^')
+			break;
+	}
 
-		original.noProfile()
-			.write(`./src/assets/generated/${imageData.path.name + i.suffix + imageData.path.ext}`, console.error);
+	original.noProfile()
+		.write(`./src/assets/generated/${imageData.path.name + i.suffix + imageData.path.ext}`, console.error);
 
-	})
+
 
 	return `/assets/generated/${imageData.path.name + i.suffix + imageData.path.ext}`;
 }
@@ -65,26 +60,28 @@ var prepImages = function (imageStr) {
 	}
 
 	// check to see if JSON already exists
-	var someImageFile = fs.readJsonSync(`./src/_artwork/${imageData.path.name}.json`);
-	console.log('IMAGE ALREADY PROCESSED', someImageFile);
-	if(someImageFile) {
-		return someImageFile;
+	var someImageFile;
+	try {
+		someImageFile = fs.readJsonSync(`./src/_artwork/${imageData.path.name}.json`);
+		console.log('Existing image data: ', someImageFile);
+		imageData = Object.assign({}, imageData, someImageFile);
+
+	} catch (err) {
+		// there's an error here
 	}
 
 	// assume it's a nice big image
-	imageData.url = generateImage(imageData);
-	imageData.fbUrl = config.canonicalRoot + generateImage(imageData, 'fb');
-	imageData.twUrl = config.canonicalRoot + generateImage(imageData, 'tw');
-	imageData.ampUrl = config.canonicalRoot + generateImage(imageData, 'amp');
+	if(!imageData.url) {imageData.url = generateImage(imageData); console.log('imageData.url', imageData.url);}
+	if(!imageData.fbUrl) {imageData.fbUrl = config.canonicalRoot + generateImage(imageData, 'fb'); console.log('imageData.fbUrl', imageData.fbUrl);}
+	if(!imageData.twUrl) {imageData.twUrl = config.canonicalRoot + generateImage(imageData, 'tw'); console.log('imageData.twUrl', imageData.twUrl);}
+	if(!imageData.ampUrl) {imageData.ampUrl = config.canonicalRoot + generateImage(imageData, 'amp'); console.log('imageData.ampUrl', imageData.ampUrl);}
 	imageData.bgStyle = `background-image : url(${imageData.url}); background-size: cover;`;
 	fs.writeJson(`./src/_artwork/${imageData.path.name}.json`, imageData, console.error);
 
+	//console.log('******* IMG', imageData)
+
 	return imageData;
 };
-
-
-
-
 
 module.exports = function (imageStr) {
 	return Object.assign({}, prepImages(imageStr));
