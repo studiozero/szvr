@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function(event){
 
 		title.classList.add('fade-in');
 
-		console.log('animation has ended')
-
 	});
 
 
