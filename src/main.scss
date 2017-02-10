@@ -93,11 +93,8 @@ svg {
   color:white;
   position:relative;
   padding:50px;
-  font-size: 1rem;
-  
-  @media(min-width:720px){
-    font-size: 2rem;
-  }
+  font-size: 2rem;
+
 
   .body{
     font-weight:300;
