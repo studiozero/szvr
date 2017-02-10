@@ -65,6 +65,23 @@ svg {
   max-width : 468px;
 }
 
+
+p.intro{
+  color:white;
+  text-align: center;
+  padding: 0px;
+  font-size: 28px;
+  margin:0 auto;
+  width:100%;
+
+
+  @media(min-width:720px){
+    font-size: 50px;
+    width:70%;
+  }
+
+}
+
 .work-list{
   margin:0;
   padding:0;
@@ -93,8 +110,11 @@ svg {
   color:white;
   position:relative;
   padding:50px;
-  font-size: 2rem;
+  font-size: 1rem;
 
+  @media(min-width:720px){
+    font-size: 2rem;
+  }
 
   .body{
     font-weight:300;
