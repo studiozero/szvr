@@ -44,9 +44,8 @@ svg {
   position: relative;
 }
 
-.intro{
-  opacity: 0;
-  text-transform: uppercase;
+.home-header-logo {
+  opacity:0;
   text-align: center;
   position: absolute;
   top: 60%;
@@ -55,13 +54,12 @@ svg {
   padding:0.8em;
   margin:0;
   width:100%;
-  color:#bdbdbd;
   font-weight: 200;
   font-size: 50px;
 
 
 }
-.intro svg {
+.home-header-logo svg {
   max-width : 468px;
 }
 
