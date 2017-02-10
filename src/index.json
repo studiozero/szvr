@@ -1,4 +1,5 @@
 {
   "_template" : "index.pug",
-  "_metadata" : {}
+  "_metadata" : {},
+  "_knols" : ['what_is_studio_zero']
 }
