@@ -1,7 +1,7 @@
 doctype
 html(⚡ lang="en")
     head
-        include _meta_amp
+        include _meta_common
         title= _metadata.title
         include _meta_twitter_large_summary.pug
         include _meta_og.pug
@@ -27,4 +27,4 @@ html(⚡ lang="en")
                 .col-md-8.longform(data-author!=`${_metadata.author}`) !{rendered}
                 include _sidebar.pug
 
-        include footer.pug
+        include _footer.pug
