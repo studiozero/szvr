@@ -49,7 +49,10 @@ var build = function () {
 
 			if(help.isJSON(item)) {
 				console.log('* Get JSON data', item.path);
-				toRender.push(help.getJSON(item));
+				var out = help.getJSON(item);
+				if(out) {
+					toRender.push(out);
+				}
 			}
 
 
