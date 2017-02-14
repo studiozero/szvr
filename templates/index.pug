@@ -1,10 +1,11 @@
 doctype
 html(lang="en")
 	head
-		include _meta_amp
 		title #{_metadata.title}
+		include _meta_common
 		include _meta_twitter_large_summary
 		include _meta_og
+		include _favicons
 
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
 		include _partials/_standard_fonts
@@ -47,7 +48,7 @@ html(lang="en")
 					img(src="/assets/images/rbs.png")
 
 
-		include footer.pug
+		include _footer.pug
 	script.
 		(function (s, t, u, d, i, o, z) {
 			s['GoogleAnalyticsObject'] = i;

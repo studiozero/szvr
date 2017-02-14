@@ -27,8 +27,8 @@ var setImageData = function (imageStr) {
 	// check to see if JSON already exists
 	var someImageFile;
 	try {
-		someImageFile = fs.readJsonSync(`./src/assets/generated/${imageData.path.name}.json`);
-		console.log(`Images already generated, remove ./src/assets/generated/${imageData.path.name}.json if you need to regenerate from source`);
+		someImageFile = fs.readJsonSync(`./src/assets/_generated/${imageData.path.name}.json`);
+		console.log(`Images already generated, remove ./src/assets/_generated/${imageData.path.name}.json if you need to regenerate from source`);
 		imageData = Object.assign({}, imageData, someImageFile);
 		alreadyGenerated = true;
 	} catch (err) {
@@ -55,7 +55,7 @@ var setImageData = function (imageStr) {
 var generateOutputUrl = function (imageData, type = 'img') {
 
 	var i = config.imagePresets[type];
-	return `/assets/generated/${imageData.path.name + i.suffix + imageData.path.ext}`;
+	return `/assets/_generated/${imageData.path.name + i.suffix + imageData.path.ext}`;
 };
 
 var generateImage = function (imageData, type = 'img') {
@@ -83,7 +83,7 @@ var generateImage = function (imageData, type = 'img') {
 
 	original.noProfile()
 		// put it in the output folder
-		.write(`./www/assets/generated/${imageData.path.name + i.suffix + imageData.path.ext}`, function (err) {
+		.write(`./www/assets/_generated/${imageData.path.name + i.suffix + imageData.path.ext}`, function (err) {
 			if(err) {
 				console.error('Error generating image', err);
 			} else {
@@ -93,11 +93,11 @@ var generateImage = function (imageData, type = 'img') {
 
 
 	original.noProfile()
-		.write(`./src/assets/generated/${imageData.path.name + i.suffix + imageData.path.ext}`, function (err) {
+		.write(`./src/assets/_generated/${imageData.path.name + i.suffix + imageData.path.ext}`, function (err) {
 			if(err) {
 				console.error('Error generating image', imageData.path.name, err);
 			} else {
-				console.log(`Copied to ./src/assets/generated/${imageData.path.name}`);
+				console.log(`Copied to ./src/assets/_generated/${imageData.path.name}`);
 			}
 		});
 }
@@ -109,7 +109,7 @@ var produceImages = function () {
 		for (key in config.imagePresets) {
 			generateImage(imageData, key);
 		}
-		fs.writeJson(`./src/assets/generated/${imageData.path.name}.json`, imageData);
+		fs.writeJson(`./src/assets/_generated/${imageData.path.name}.json`, imageData);
 		// pop [0] off the front
 		imagesToGenerate.shift();
 		produceImages();

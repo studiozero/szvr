@@ -129,6 +129,13 @@ var renderMarkdown = function (data) {
 	return renderStandardPage(data); //output HTML
 };
 
+var renderKnol = function (frontMatter) {
+	var parsed = reader.parse(frontMatter.body);
+	frontMatter.html = writer.render(parsed);
+	return Object.assign({}, frontMatter);
+}
+
+
 var isMarkdown = function (item) {
 	var mdExt  = [
 		".markdown", ".mdown", ".mkdn", ".mkd", ".md"
@@ -155,6 +162,10 @@ var isSass = function (item) {
 };
 
 var renderJSON = function (data) {
+	if(data._knols.what_is_studio_zero) {
+		console.log('WHAT IS STUDIO ZERO?', JSON.stringify(data))
+		data._knols.leigh_loves_chicken = {'donkey' : 'salad'};
+	}
 	return templates[data._template](data);
 }
 
@@ -162,8 +173,36 @@ var getJSON = function (item) {
 	var paths = buildPaths(item, '.html'); // compiling to .html
 	var json = fs.readJsonSync(item.path);
 
+	if(!json._template || !json._metadata) {
+		console.error(item.path, 'is not a valid sz .json file');
+		return false
+	}
 
-	return Object.assign({}, json, prepareData(paths, json._metadata), {_format : 'json'});
+	var knols = {};
+	// Add knols
+	if(json._knols) {
+		json._knols.forEach(function (knol){
+
+			var key = path.basename(knol, '.md');
+
+			var knolPath = `./knols/${key}.md`;
+
+
+			var file = fs.readFileSync(knolPath, 'utf-8'); // is markdown knol
+			var frontMatter = fm(file); // gets the data
+			var output = renderKnol(frontMatter);
+			knols[key] = output;
+			//var paths = buildPaths(item, '.html');
+
+			return Object.assign({}, prepareData(paths, frontMatter.attributes), {
+				_format : 'markdown',
+				body : frontMatter.body
+			});
+		})
+	}
+
+
+	return Object.assign({}, json, prepareData(paths, json._metadata), {_format : 'json', _knols : knols});
 
 }
 
