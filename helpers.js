@@ -93,6 +93,8 @@ var prepareData = function (paths, meta) {
 
 	prepped._metadata.imageData = imagePrep.setImageData(prepped._metadata.image);
 
+	prepped._metadata.prettyDate = moment(newMeta.date).format('MMMM Do, YYYY');
+
 	for(key in site_data) {
 		var submenu = site_data[key];
 		if(paths.url.indexOf(`/${submenu.dir}/`) >= 0){

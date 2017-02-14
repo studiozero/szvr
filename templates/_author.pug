@@ -1,0 +1,5 @@
+.author.p-card.h-card
+    p By
+        a.p-author.h-card(href!=`${_metadata.authorLink}`) #{_metadata.author}
+        | on
+        time.dt-published(datetime!=`${_metadata.date}`) #{_metadata.prettyDate}

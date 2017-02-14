@@ -5,6 +5,8 @@ title : "Testing times"
 sell : "When was the last time you were tested?"
 summary : "If your delivery team are not testing product, then they’re exposing your business to some serious risks."
 description : "Here’s why you should test, in the form of a story about pies. Oh, and there may be some time-travel."
+author : "Leigh Garland"
+authorLink : ""
 ---
 
 
@@ -27,6 +29,8 @@ So what’s the point of all this testing? Simple. It’s an _investment in the 
 
 Here’s why you should test, in the form of a story about pies. I love food analogies, because food is easier to understand than code. Oh, and there may be some time-travel.
 
+<center><img src="/assets/images/pie_test1.jpeg" /></center>
+
 ## User testing
 
 You’re starting up a pie company. You think you have got the greatest pie recipe known to humanity. You’re going to solve the worlds pie problems with this recipe. It’s the recipe that you grew up with, handed down from your great-grandmother on her death bed. You _love_ this recipe. You love your pie.
@@ -35,9 +39,11 @@ You work out all the logistics of pie manufacture. You source organic, fair-trad
 
 Except you _forgot to test your pie with your customers_. If you had spent _one day_ doing customer testing, you’d have realised that a Salmon & Custard pie was never going to sell. Not one pie. Except perhaps to your great-grandmother, but she’s dead. As is your business.
 
-<center><img class="progressiveMedia-image js-progressiveMedia-image" data-src="https://cdn-images-1.medium.com/max/1600/1*3XUzEBhLEHSO8A2bZUtG8g.jpeg" src="https://cdn-images-1.medium.com/max/1600/1*3XUzEBhLEHSO8A2bZUtG8g.jpeg"></center>
+<center><img src="/assets/images/tardis.jpeg" /></center>
 
 Thankfully, we can rewind time&hellip; As you start your pie business, you open up a market stall and have your chef bake a small batch of pies and give them to passers-by. Salmon and custard does not go down well. But your Chicken & Tarragon and Beef & Horseradish pies go down a treat. Hoorah! You’re now on the road to success!
+
+<center><img src="/assets/images/pie_test2.jpeg" /></center>
 
 ## Automated Testing
 
@@ -49,7 +55,11 @@ Unbeknownst to you, one of your ingredient suppliers has accidentally swapped yo
 
 In another instance, you and your head chef are trying to reduce the amount of salt in your Beef pies. Having rigorously tested the reduced salt version on your market stall, you’re both confident that you can reduce to 1 teaspoon of salt per pie. Unbeknownst to you, as you program the pie-o-matic, someone accidentally keys 11, rather than 1 into the recipe console. Unbeknownst, because no-one is monitoring the salt content. Things don’t go well for you when a bunch of people with high blood-pressure end up in hospital after eating one of your oh-so-salty beef pies.
 
+<center><img src="/assets/images/time_machine.jpeg" /></center>
+
 Thankfully, we can rewind time&hellip; as you scale up your pie business, you put some simple automated checks in, to test the fundamentals of your pies. One set simply tests each ingredient, to make sure it is what it should be (a unit test). The other objectively tests pie salinity (functional test).
+
+<center><img src="/assets/images/pie_test3.jpeg" /></center>
 
 ## QA Testing
 
@@ -59,9 +69,13 @@ Your business partner comes into your pie-themed luxury office. She looks worrie
 
 By the end of the day, it’s become a national outcry. You’ve taken personal calls from the Prime Minister, the Queen and Gordon Ramsey. Everyone is complaining about the last batch of pies. As you head down to the factory floor, your heart is in your mouth and your palms are sweating. You grab a boxed pie, from the end of the production line and open it. Horror! The pie is burnt to a crisp on the outside. You check another, and another and another. All the same. You have lost thousands of pounds worth of pies, and the trust of the nation.
 
+<center><img src="/assets/images/hawking.jpeg" /></center>
+
 Thankfully&hellip; you know the drill. Time rewinds, and you’re back at the point where you began to scale up your business. The pie-o-matic is working, but this time you hire a taster (QA) to test a few pies from each batch, to make sure that the overall product is still good.
 
 Your new QA, Bernard, was formerly a British pie-eating champion, and is thrilled to be able to put his skills to good use once more. One day he notices that the pies are looking a little darker than usual, and it turns out the pie-o-matic has developed a timer fault, and is cooking for too long. A simple fix, and the nation is sleeping easy once again, stomachs pleasantly full of your pies.
+
+<center><img src="/assets/images/pie_test4.jpeg" /></center>
 
 ## Security Testing
 
@@ -73,9 +87,13 @@ Given the reliance of the nation on your pies, there is an outcry at the highest
 
 Ohhhh woe is you. If only you could go back&hellip; wait&hellip; that’s right&hellip;
 
+<center><img src="/assets/images/delorean.jpeg" /></center>
+
 Time rewinds, and you stand once more atop a mountain of pies. This time around however, you choose the right path. You choose the path of righteousness. This time, you do a bit of basic security testing.
 
 The first thing you discover is that your truck drivers habitually leave the back doors unlocked, in order to get the pies delivered that little bit quicker. After some discussion, you decide that a number of ‘LOCK YOUR DOORS’ stickers is the best way to avoid these issues in future. Does it mean that your pie trucks are impervious to all attacks? No, but it stops the really silly ones that result in the Doomsday scenario above.
+
+<center><img src="/assets/images/pie_test5.jpeg" /></center>
 
 ## The end
 

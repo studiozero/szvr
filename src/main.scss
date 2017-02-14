@@ -203,4 +203,16 @@ footer{
   .jumbotron {
     background : #ede9e9 url(/assets/images/vr-patterns.png) repeat scroll center center;
   }
+
+  figure {
+    text-align: center;
+    img {
+      max-width : 720px;
+      width : 100%;
+
+    }
+    figcaption {
+      font-size : 0.8em;
+    }
+  }
 }
