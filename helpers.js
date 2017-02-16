@@ -95,6 +95,10 @@ var prepareData = function (paths, meta) {
 
 	prepped._metadata.prettyDate = moment(newMeta.date).format('MMMM Do, YYYY');
 
+	if(!prepped._metadata.author) {
+		prepped._metadata.author = "Studio Zero"
+	}
+
 	for(key in site_data) {
 		var submenu = site_data[key];
 		if(paths.url.indexOf(`/${submenu.dir}/`) >= 0){
