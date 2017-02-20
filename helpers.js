@@ -43,19 +43,40 @@ var initTemplates = function (callback) {
 const renderStandardPage = pug.compileFile('./templates/blog_page.pug');
 
 
-var buildPaths = function (item, ext) {
+var buildPaths = function (item, ext, forceIndex) {
 
 	var wwwRootPath = item.path.split(config.srcDir)[1];
-	var newPathObj = path.parse(wwwRootPath);
-	newPathObj.ext = ext;
-	delete newPathObj.base;
+	var newPathObj;
+
+	if(forceIndex) {
+		console.log(wwwRootPath);
+		var oldPathObject = path.parse(wwwRootPath);
+		newPathObj = {
+			root : '/',
+			dir : 	oldPathObject.dir + '/' + oldPathObject.name,
+			name : 'index',
+			ext : ext
+		}
+
+	} else {
+
+		newPathObj = path.parse(wwwRootPath);
+		newPathObj.ext = ext;
+		delete newPathObj.base;
+
+	}
 
 	var renderPath = path.format(newPathObj);
+	delete newPathObj.ext;
+	delete newPathObj.name;
+	var prettyPath = path.format(newPathObj); // drops the /index.html from the path
 
 	return {
 		url : renderPath,
 		renderPath : config.wwwDir + renderPath,
-		filePath : item.path
+		filePath : item.path,
+		prettyPath : prettyPath,
+		canonicalURL : config.canonicalRoot + prettyPath
 	};
 }
 
@@ -87,10 +108,6 @@ var prepareData = function (paths, meta) {
 		"_paths" : paths
 	});
 
-	prepped._metadata.canonicalURL = config.canonicalRoot + paths.url;
-	prepped._metadata.absoluteURL = paths.url;
-	// get the defaults
-
 	prepped._metadata.imageData = imagePrep.setImageData(prepped._metadata.image);
 
 	prepped._metadata.prettyDate = moment(newMeta.date).format('MMMM Do, YYYY');
@@ -118,7 +135,7 @@ var getMarkdown = function (item) {
 
 	var file = fs.readFileSync(item.path, 'utf-8');
 	var frontMatter = fm(file);
-	var paths = buildPaths(item, '.html');
+	var paths = buildPaths(item, '.html', true);
 
 	return Object.assign({}, prepareData(paths, frontMatter.attributes), {
 		_format : 'markdown',

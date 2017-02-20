@@ -51,7 +51,6 @@ var defaultData = {
 	"_metadata" : {
 		date: moment().format(datePattern),
 		site : 'Studio Zero',
-		canonicalURL: canonicalRoot, // but is overwritten by canonicalRoot + path for generated pages
 		image: '#ede9e9',
 		title: 'We are Studio Zero', // keep it short
 		sell: 'We are Studio Zero | Immersive Web | VR | AR | MR | AI', // keep it < 80 chars
