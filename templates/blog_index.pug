@@ -1,0 +1,43 @@
+doctype
+html(lang="en")
+	head
+		title #{_metadata.title}
+		include _meta_common
+		include _meta_twitter_large_summary
+		include _meta_og
+		include _favicons
+
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+		include _partials/_standard_fonts
+		link(rel="stylesheet" href="/main.css")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
+		script(src="/assets/js/aframe-v0.4.0.min.js")
+		script(src="/assets/components/ground.js")
+		script(src="/assets/js/main.js")
+
+	body
+		include _main_menu
+
+		.container
+			h2 On the blog
+				each post in _site_data.blog.contents
+					include _partials/_blog_card.pug
+
+		include _footer.pug
+	script.
+		(function (s, t, u, d, i, o, z) {
+			s['GoogleAnalyticsObject'] = i;
+			s[i] = s[i] || function () {
+					(s[i].q = s[i].q || []).push(arguments)
+				}, s[i].l = 1 * new Date();
+			o = t.createElement(u),
+				z = t.getElementsByTagName(u)[0];
+			o.async = 1;
+			o.src = d;
+			z.parentNode.insertBefore(o, z)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-90214138-1', 'auto');
+		ga('send', 'pageview');
+

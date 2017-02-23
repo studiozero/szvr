@@ -1,0 +1,5 @@
+{
+  "_template" : "blog_index.pug",
+  "_metadata" : {},
+  "_knols" : ["blog_heading.md"]
+}
