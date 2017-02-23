@@ -75,6 +75,8 @@ var build = function () {
 					case 'json' :
 						output = help.renderJSON(data)
 						break;
+					default :
+						console.error('Not a valid format')
 				}
 
 				console.log('* Rendered', data._paths.renderPath);
@@ -100,7 +102,7 @@ var build = function () {
 				}
 			});
 
-			console.log('SITE DATA', JSON.stringify(help.getSiteData()));
+			console.log('SITE DATA',help.getSiteData());
 			// Move images
 			imagePrep.produce();
 		});

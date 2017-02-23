@@ -9,6 +9,10 @@ description : "This is where we keep track of many of the changes to the website
 
 ## Our changeblog
 
+** Changes @2017-02-23 **
+
+It's storm Doris outside, things blowing off the roof. Inside though, we're sorting out paths to files so we get pretty URLs, and making index pages for the blogs etc.
+
 
 **Changes @2017-02-08**
 
