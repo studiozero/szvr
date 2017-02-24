@@ -5,6 +5,7 @@ title : "Can you see what I'm seeing?"
 sell : "Save VR; save the world"
 summary : "VR is a tool for empathy, and we're running short of that in real life."
 description : "VR is a tool for empathy, and we're running short of that in real life."
+author : "Leigh Garland"
 ---
 
 

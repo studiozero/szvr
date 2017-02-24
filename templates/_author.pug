@@ -1,0 +1,12 @@
+.author.p-card.h-card.container
+    .row
+
+    p.col-md-6 By
+        if (_metadata.authorLink)
+            a.p-author.h-card(href!=`${_metadata.authorLink}`)   #{_metadata.author}
+            |  on
+            time.dt-published(datetime!=`${_metadata.date}`)   #{_metadata.prettyDate}
+        else
+            span.p-author.h-card  #{_metadata.author}
+            |  on
+            time.dt-published(datetime!=`${_metadata.date}`)   #{_metadata.prettyDate}

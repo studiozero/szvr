@@ -19,7 +19,7 @@ If you want to include a knol in your template you should :
 ```jade
     h2 _knols.what_is_studio_zero.title
     p.description !{_knols.what_is_studio_zero.html}
-        span.author _knols.what_is_studio_zero.data.author
+        span.author _knols.what_is_studio_zero.attributes.author
 ```
 **NB** You need to use the `!{}` syntax to output the actual HTML from the markdown in your content, otherwise it escapes all the characters. This can be useful for code samples.
 

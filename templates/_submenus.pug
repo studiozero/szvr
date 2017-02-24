@@ -7,4 +7,4 @@ each topLevel in _site_data
             - var top = topLevel.contents.slice(0,3);
             each post in top
                 li.post
-                    a(href=post._metadata.absoluteURL title=post._metadata.sell)= post._metadata.title
+                    a(href=post._paths.prettyPath title=post._metadata.sell)= post._metadata.title

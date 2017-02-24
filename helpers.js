@@ -43,19 +43,40 @@ var initTemplates = function (callback) {
 const renderStandardPage = pug.compileFile('./templates/blog_page.pug');
 
 
-var buildPaths = function (item, ext) {
+var buildPaths = function (item, ext, forceIndex) {
 
 	var wwwRootPath = item.path.split(config.srcDir)[1];
-	var newPathObj = path.parse(wwwRootPath);
-	newPathObj.ext = ext;
-	delete newPathObj.base;
+	var newPathObj;
+
+	if(forceIndex) {
+		console.log(wwwRootPath);
+		var oldPathObject = path.parse(wwwRootPath);
+		newPathObj = {
+			root : '',
+			dir : 	oldPathObject.dir + '/' + oldPathObject.name,
+			name : 'index',
+			ext : ext
+		}
+
+	} else {
+
+		newPathObj = path.parse(wwwRootPath);
+		newPathObj.ext = ext;
+		delete newPathObj.base;
+
+	}
 
 	var renderPath = path.format(newPathObj);
+	delete newPathObj.ext;
+	delete newPathObj.name;
+	var prettyPath = path.format(newPathObj); // drops the /index.html from the path
 
 	return {
 		url : renderPath,
 		renderPath : config.wwwDir + renderPath,
-		filePath : item.path
+		filePath : item.path,
+		prettyPath : prettyPath,
+		canonicalURL : config.canonicalRoot + prettyPath
 	};
 }
 
@@ -75,34 +96,32 @@ var copyWholesale = function (item) {
 	return false;
 };
 
-var prepareData = function (paths, meta) {
-	// for the moment, we ONLY care about setting _template and _metadata
-
-	var defaultData = Object.assign({}, config.defaultData);
-	// make the _metadata url the full canonical site url
-	var newMeta = Object.assign({}, defaultData._metadata, meta);
-
-	var prepped = Object.assign({}, defaultData, {
-		"_metadata" : newMeta,
-		"_paths" : paths
-	});
-
-	prepped._metadata.canonicalURL = config.canonicalRoot + paths.url;
-	prepped._metadata.absoluteURL = paths.url;
-	// get the defaults
-
-	prepped._metadata.imageData = imagePrep.setImageData(prepped._metadata.image);
+var addToSiteData = function (meta) {
 
 	for(key in site_data) {
 		var submenu = site_data[key];
-		if(paths.url.indexOf(`/${submenu.dir}/`) >= 0){
+		if(meta._paths.url.indexOf(`/${submenu.dir}/`) >= 0){
 			// add as a blog item
-			submenu.contents.push(prepped);
+			submenu.contents.push(meta);
 		}
 	}
 
-	// return the 'default' + page data, ready for merge
-	return prepped;
+}
+
+var prepareMetaData = function (mergedData) {
+	// for the moment, we ONLY care about setting _template and _metadata
+	console.log('###########\n*** Merge', mergedData);
+	mergedData._metadata.imageData = imagePrep.setImageData(mergedData._metadata.image);
+
+	mergedData._metadata.prettyDate = moment(mergedData._metadata.date).format('MMMM Do, YYYY');
+
+	if(!mergedData._metadata.author) {
+		mergedData._metadata.author = "Studio Zero"
+	}
+
+	addToSiteData(mergedData);
+
+	return mergedData;
 }
 
 var reader = new commonmark.Parser();
@@ -112,12 +131,20 @@ var getMarkdown = function (item) {
 
 	var file = fs.readFileSync(item.path, 'utf-8');
 	var frontMatter = fm(file);
-	var paths = buildPaths(item, '.html');
+	var paths = buildPaths(item, '.html', true);
 
-	return Object.assign({}, prepareData(paths, frontMatter.attributes), {
-		_format : 'markdown',
-		body : frontMatter.body
-	});
+	// prepare all the metadata apart from the body contents or other contents of JSON if it's a JSON file
+
+	var mergedData = Object.assign({},
+		config.defaultData,
+		{
+			_format : 'markdown',
+			_paths : paths,
+			_metadata : frontMatter.attributes,
+			body : frontMatter.body
+		});
+
+	return prepareMetaData(mergedData);
 };
 
 
@@ -162,10 +189,6 @@ var isSass = function (item) {
 };
 
 var renderJSON = function (data) {
-	if(data._knols.what_is_studio_zero) {
-		console.log('WHAT IS STUDIO ZERO?', JSON.stringify(data))
-		data._knols.leigh_loves_chicken = {'donkey' : 'salad'};
-	}
 	return templates[data._template](data);
 }
 
@@ -190,21 +213,28 @@ var getJSON = function (item) {
 
 			var file = fs.readFileSync(knolPath, 'utf-8'); // is markdown knol
 			var frontMatter = fm(file); // gets the data
-			var output = renderKnol(frontMatter);
-			knols[key] = output;
-			//var paths = buildPaths(item, '.html');
-
-			return Object.assign({}, prepareData(paths, frontMatter.attributes), {
-				_format : 'markdown',
-				body : frontMatter.body
-			});
+			knols[key] = renderKnol(frontMatter);
 		})
 	}
+	
+	// prepare all the metadata apart from the body contents or other contents of JSON if it's a JSON file
 
+	// empty metadata node crushes default data :(
 
-	return Object.assign({}, json, prepareData(paths, json._metadata), {_format : 'json', _knols : knols});
-
-}
+	var mergedMeta = Object.assign({}, config.defaultData._metadata, json._metadata);
+	
+	var mergedData = Object.assign({}, 
+		config.defaultData, 
+		json, 
+		{
+			_format : 'json',
+			_knols : knols,
+			_paths : paths,
+			_metadata: mergedMeta
+		});
+	
+	return prepareMetaData(mergedData);
+};
 
 var isJSON = function (item) {
 	return (path.extname(item.path) === '.json');

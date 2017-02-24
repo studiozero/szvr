@@ -1,5 +1,5 @@
 doctype
-html(⚡ lang="en")
+html(lang="en")
     head
         title= _metadata.title
         include _meta_common
@@ -19,13 +19,15 @@ html(⚡ lang="en")
 
     body.blog-page
         include _main_menu.pug
-        .jumbotron(style!=`${_metadata.imageData.bgStyle}`)
+        article.h-entry
+            .jumbotron(style!=`${_metadata.imageData.bgStyle}`)
+                .container
+                    h1.p-name: span #{_metadata.title}
+                    p.p-summary: span= _metadata.description
+            include _author
             .container
-                h1: span #{_metadata.title}
-                p: span= _metadata.description
-        .container
-            .main.row
-                .col-md-8.longform(data-author!=`${_metadata.author}`) !{rendered}
-                include _sidebar.pug
+                .main.row
+                    .col-md-8.longform.e-content(data-author!=`${_metadata.author}`) !{rendered}
+                    include _sidebar.pug
 
         include _footer.pug

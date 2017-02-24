@@ -75,24 +75,17 @@ var build = function () {
 					case 'json' :
 						output = help.renderJSON(data)
 						break;
+					default :
+						console.error('Not a valid format')
 				}
 
 				console.log('* Rendered', data._paths.renderPath);
 				fs.outputFileSync(data._paths.renderPath, output);
-			})
-
-
-			// if image is defined in frontmatter,
-			// find it and make all the versions for thumbnails,
-			// OG & Twitter cards etc.
-
-			// generate valid RSS for blog
-
-			// copy the aws-upload conf file to the root
+			});
 
 			fs.copy('./aws-upload.conf.js', './www/aws-upload.conf.js', function (err) {
 				if(err) {
-					console.error('### Failed at the last hurdle');
+					console.error('### Fail', err);
 				} else {
 				}
 			});
@@ -100,15 +93,16 @@ var build = function () {
 
 			// copy the standalone folders as they are
 			toCopy.forEach(function (dir) {
-				//console.log('* Copied', path.basename(dir));
 				try {
 					fs.copySync(dir, `./www/${path.basename(dir)}`);
 					console.log('### Copied', path.basename(dir));
 
 				} catch (err) {
-					console.error('FAIL', err);
+					console.error('### Fail', err);
 				}
 			});
+
+			console.log('SITE DATA',help.getSiteData());
 			// Move images
 			imagePrep.produce();
 		});
