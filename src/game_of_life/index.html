@@ -1,0 +1,24 @@
+<html>
+<head>
+    <script src="./aframe.js"></script>
+    <script src="./aframe-extras.js"></script>
+    <style>
+        nav {
+            position : absolute;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+
+<a-scene id="scene">
+    <a-sky color="skyblue"></a-sky>
+    <a-entity id="world">
+        <a-entity id="food"></a-entity>
+        <a-entity id="blobs"></a-entity>
+    </a-entity>
+    <a-entity position="-4.050695640613503 3.4000000000000004 9.75080576152441" camera="active:true;userHeight:1.8" wasd-controls="" rotation="-4.239887683968098 311.1160827560369 0" look-controls scale="1 1 1" visible="true"></a-entity>
+</a-scene>
+<script src="./gol.js"></script>
+</body>
+</html>

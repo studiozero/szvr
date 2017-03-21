@@ -1,7 +1,7 @@
 ---
 date : "2017-02-28T18:00:00Z"
 image : "#ec1d83"
-title : "Why the web will win"
+title : "Why Web VR"
 sell : "Why the web will win"
 summary : "It would be a tragedy for any one person or corporation to wield total power in VR"
 description : "The web isn't perfect, but it's the best place we have for VR, or indeed anything else"
@@ -37,7 +37,7 @@ and finally...
 
 ------
 
-Of course, all of the above came to pass, and for now we're looking at a world where Wikipedia is almost always the top result in a search; where YouTube is considered the second-largest search engine after Google; Where Facebook and Twitter have user numbers in the billions of which many live broadcast chunks of their lives to their extended networks; And all, including 60% of e-commerce transactions, taking place on the mobile web.
+<!-- Of course, all of the above came to pass, and for now we're looking at a world where Wikipedia is almost always the top result in a search; where YouTube is considered the second-largest search engine after Google; Where Facebook and Twitter have user numbers in the billions of which many live broadcast chunks of their lives to their extended networks; And all, including 60% of e-commerce transactions, taking place on mobile. -->
 
 So, perhaps the best VR experiences are, in the short term, going to be reserved for Steam and Oculus stores, but be assured VR on the web _is_ part of the future. For many people, convenience, not quality, is the driving force behind their choices.
 
@@ -65,9 +65,9 @@ WEB :
 
 It's why Apple has to put those 'number of steps has been reduced' in their video adverts.
 
-## Control
+## Distribution
 
-Another problem is the ~~censorship~~ publishing guidelines. There is a discussion to be had around the fact that stores don't allow apps with nudity or gambling, but will happily allow apps and games showing extreme graphic violence. It's their monopoly on culture. If _your_ culture is comfortable with nakedness, but uncomfortable with violence, tough, Google knows better; Valve knows better; Facebook knows better.
+Another problem is the <strike>censorship</strike> publishing guidelines. There is a discussion to be had around the fact that stores don't allow apps with nudity or gambling, but will happily allow apps and games showing extreme graphic violence. It's their monopoly on culture. If _your_ culture is comfortable with nakedness, but uncomfortable with violence, tough, Google knows better; Valve knows better; Facebook knows better.
 
 What's also problematic is that App stores can be notoriously capricious. They regularly pull apps for no apparent reason; deny publication because of an arbitrary infringement of some arcane rule. Or, they suddenly hike the price of submission.
 
@@ -79,31 +79,20 @@ APP STORE :
 
 WEB : 
 
-> You buy domain > host website > Revenue > 
+> You buy domain > ??? > Profit!  
 
-## Distribution
+## Control
+
+
 
 Finally, with that combination of monopoly and secrecy, app stores have the potential to be easily abused by those in power, or for those people not to be held to account when darker forces compel them to do bad things. Luckily for us, all of the biggest app stores are based in a country unaffected by corruption, religious fundamentalism or dubious foreign influence.
 
-APP STORE :
-
-> You create atheist dancing game > board member of app store gets elected to high office > instructs app store to give up list of all the people that play this game > you never know > users targeted by secret police
-
-WEB : 
-
-> You create atheist dancing game > secret police request list of users > you try to move to Iceland...
+<figure>
+    <img src="" />
+</figure>
 
 ## Yeah, but...
 
 The web is not perfect. It can be painful to work with, especially at the bleeding edge. The variety of devices to cater for can be mind-numbing. What was working yesterday may suddenly stop working. It's hard to predict what kind of experience people will get, or the quality of the hardware, or which browsers they'll have installed. 
 
-
-
-
-
-Problems with argument ;
-
-* Web is not inherently secure
-* Need to focus on RUNNING IN THE BROWSER
-* Gets a bit political?
-* Only have 10 minutes
+BUT, bet against the web at your peril. It's already the best distribution platform, and has a large open community. Google & Facebook are betting on the web, building WebVR directly into their browsers.
