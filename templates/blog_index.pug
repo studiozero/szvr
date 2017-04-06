@@ -25,19 +25,4 @@ html(lang="en")
 					include _partials/_blog_card.pug
 
 		include _footer.pug
-	script.
-		(function (s, t, u, d, i, o, z) {
-			s['GoogleAnalyticsObject'] = i;
-			s[i] = s[i] || function () {
-					(s[i].q = s[i].q || []).push(arguments)
-				}, s[i].l = 1 * new Date();
-			o = t.createElement(u),
-				z = t.getElementsByTagName(u)[0];
-			o.async = 1;
-			o.src = d;
-			z.parentNode.insertBefore(o, z)
-		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-		ga('create', 'UA-90214138-1', 'auto');
-		ga('send', 'pageview');
-
+        include _tracking.pug
