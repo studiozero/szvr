@@ -13,7 +13,7 @@ var artworkSrc = './artwork';
 
 // folders (from ./src) that should appear in the menu, and the 'display' name for them
 var topLevelFolders = [
-	{dir : 'hiring', title: 'We\'re hiring!'},
+	//{dir : 'hiring', title: 'We\'re hiring!'},
 	{dir : 'blog',   title : 'Blog'}
 ]
 // image presets
