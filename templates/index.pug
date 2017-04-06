@@ -1,45 +1,45 @@
 doctype
 html(lang="en")
-	head
-		title #{_metadata.title}
-		include _meta_common
-		include _meta_twitter_large_summary
-		include _meta_og
-		include _favicons
+    head
+        title #{_metadata.title}
+        include _meta_common
+        include _meta_twitter_large_summary
+        include _meta_og
+        include _favicons
 
-		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
-		include _partials/_standard_fonts
-		link(rel="stylesheet" href="/main.css")
-		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
-		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
-		script(src="/assets/js/aframe-v0.4.0.min.js")
-		script(src="/assets/components/ground.js")
-		script(src="/assets/js/main.js")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+        include _partials/_standard_fonts
+        link(rel="stylesheet" href="/main.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
+        script(src="/assets/js/aframe-v0.4.0.min.js")
+        script(src="/assets/components/ground.js")
+        script(src="/assets/js/main.js")
 
-	body
-		include _main_menu
-		include _home_header
+    body
+        include _main_menu
+        include _home_header
 
-		include _opening
+        include _opening
 
-		include _webvr
-		
-		include _work
+        include _webvr
 
-
-		section.clients.container
-			ul.row
-				li.col-md-3
-					img(src="/assets/images/sa.png")
-				li.col-md-3
-					img(src="/assets/images/tabl.png")
-				li.col-md-3
-					img(src="/assets/images/tesco.png")
-				li.col-md-3
-					img(src="/assets/images/icl.png")
-				li.col-md-3
-					img(src="/assets/images/rbs.png")
+        include _work
 
 
-		include _footer.pug
+        section.clients.container
+            ul.row
+                li.col-md-3
+                    img(src="/assets/images/sa.png")
+                li.col-md-3
+                    img(src="/assets/images/tabl.png")
+                li.col-md-3
+                    img(src="/assets/images/tesco.png")
+                li.col-md-3
+                    img(src="/assets/images/icl.png")
+                li.col-md-3
+                    img(src="/assets/images/rbs.png")
+
+
+        include _footer.pug
         include _tracking.pug
