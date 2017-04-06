@@ -64,6 +64,19 @@ svg {
 }
 
 
+.navbar{
+  background:transparent;
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index: 100;
+  border-color:transparent;
+
+  &.navbar-inverse .navbar-nav>li>a{
+    color:white;
+  }
+}
+
 p.intro{
   color:white;
   text-align: center;
@@ -80,25 +93,25 @@ p.intro{
 
 }
 
+.our-work{
+  background:url('./assets/images/vr-patterns.png') repeat center center #F6F7F9;
+  padding-top:50px;
+  padding-bottom:50px;
+}
+
 .work-list{
-  margin:0;
-  padding:0;
-  list-style: none;
-  overflow: hidden;
+  h3{
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
+    padding-bottom:10px;
+    margin-bottom: 20px;
+  }
 
-  .work-item{
-    float:left;
-    width: 100%;
-
-    @media(min-width:720px){
-      width:33.33%;
-    }
-
-    img{
-      max-width: 100%;
-    }
+  .read-more{
+    margin-left:10px;
   }
 }
+
+
 
 //
 
@@ -123,6 +136,20 @@ p.intro{
     @media(min-width:720px){
       width: 70%;
     }
+  }
+
+}
+
+.why-wvr{
+
+  padding:50px 0;
+
+  .intro{
+    color:#444444;
+  }
+
+  .body{
+    font-size: 3rem;
   }
 
 }

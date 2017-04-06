@@ -8,12 +8,12 @@
   "dependencies": {},
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "run-p build watch:* & wait",
     "build": "node build.js",
     "deploy": "cd ./www; s3-upload; cd ..",
     "predeploy": "npm version patch",
-    "template:watch": "watch 'node build.js' ./templates",
-    "src:watch": "watch 'node build.js' ./src"
+    "watch:templates": "watch 'node build.js' ./templates",
+    "watch:src": "watch 'node build.js' ./src"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "klaw-sync": "^1.0.2",
     "moment": "^2.17.1",
     "node-sass": "^4.3.0",
+    "npm-run-all": "^4.0.2",
     "pug": "^2.0.0-beta6",
     "through2": "^2.0.3",
     "watch": "latest"
