@@ -1,0 +1,19 @@
+{
+  "name": "szvr2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "run-p build:* watch:* & wait",
+    "watch:css": "onchange \"static/css/*.scss\" -- npm run build:css",
+    "build:css": "node-sass static/css/style.scss static/css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
+    "onchange": "^3.2.1"
+  }
+}

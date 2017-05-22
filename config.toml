@@ -1,0 +1,7 @@
+title="We are Studio Zero"
+baseURL="http://studiozero.co"
+
+[params]
+	name="Studio Zero"
+	description = "We are Studio Zero | Immersive Web | VR | AR | MR | AI"
+	author="Studio Zero"

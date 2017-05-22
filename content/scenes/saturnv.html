@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Saturn 5</title>
+	<script type="text/javascript" src="{{ .Site.BaseURL}}js/aframe.min.js"></script>
+</head>
+<body>
+
+	<a-scene>
+		<a-assets>
+			<a-asset-item id="saturn" src="{{.Site.BaseURL}}models/sV.dae"></a-asset-item>
+		</a-assets>
+		<a-sky color="lightblue"></a-sky>
+		<a-entity position="0 0 -8" collada-model="#saturn"></a-entity>
+	</a-scene>
+
+</body>
+</html>
