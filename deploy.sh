@@ -5,6 +5,11 @@ echo -e "\033[0;32mDeploying updates to Github...\033[0m"
 # Build the project.
 hugo
 
+# Push to surge - CNAME & ROUTER files should have copied over from the static folder
+# cd public
+# surge
+# cd ..
+
 # Add changes to git.
 git add -A
 
