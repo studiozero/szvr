@@ -7269,11 +7269,15 @@ a-scene {
 .header-wrapper {
   height: 700px;
   position: relative;
-  padding: 0 2rem; }
+  margin: 0 2rem;
+    background: linear-gradient(to bottom, #317ecc 0%,#fdfffe 50%,#71747d 50%,#313236 100%);
+    padding :0;
+    }
   @media (max-width: 767px) {
     .header-wrapper {
       height: 250px;
-      padding: 0; } }
+      padding: 0;
+        margin:  0;} }
 
 .text-logo {
   position: absolute;
