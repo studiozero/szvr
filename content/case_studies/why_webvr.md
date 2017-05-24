@@ -1,6 +1,6 @@
 ---
 title: "Why WebVR"
-draft: true
+draft: false
 description: "Why WebVR Case Study by Studio Zero"
 author: "Studio Zero"
 ---
