@@ -8,7 +8,7 @@
     "watch:css": "onchange \"static/css/*.scss\" -- npm run build:css",
     "build:css": "node-sass static/css/style.scss static/css/style.css",
     "predeploy": "hugo",
-    "deploy": "surge -p public"
+    "deploy": "surge -p public --domain https://studiozero.co"
   },
   "keywords": [],
   "author": "",
