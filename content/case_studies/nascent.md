@@ -14,7 +14,7 @@ Nascent were already familiar with VR in the world of medical education, but the
 We set out to make a 2 minute demo of what could be achieved.
 
 <div class="iframe-wrapper">
-	<iframe class="loom-video" src="https://www.useloom.com/embed/3cbc2fba64314984b42e1e5c48969e19" frameborder="0" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/7R2uxoAsKzo" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
