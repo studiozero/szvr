@@ -20,9 +20,9 @@ We set out to make a 2 minute demo of what could be achieved.
 
 ## Solution
 
-We got a short script for a basic mechanism of action for PARP and worked with Nascent to understand the visuals that they would like to see. Using other Virtual Reality tools such as Oculus Medium, we sculpted 3D models to be used and then exported them into the scene. We have developed a workflow that enables us to move fast with creating models in Oculus Medium and updating them directly into the scene should simple changes need to be made to colours, sizes and shapes etc.
+We got a short script for a basic mechanism of action for PARP and worked with Nascent to understand the visuals that they would like to see. Using other Virtual Reality tools such as Oculus Medium, we sculpted 3D models and then exported them to be used in the scene. We have developed a workflow that enables us to move fast with creating models in Oculus Medium and updating them directly into the scene should simple changes need to be made to colours, sizes and shapes etc.
 
-In addition we are able to do something that is difficult to do in 'native VR' and that is link out to external supporting sources once the experience is over. We felt that this ability leant directly towards creating educational materials.
+In addition we are able to do something that is difficult to do in 'native VR' and that is link out to external supporting sources once the experience is over. We felt that this ability leaned directly towards creating educational materials.
 
 ## Results
 
