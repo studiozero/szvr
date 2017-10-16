@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+{{ partial "_top" .}}
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +6,9 @@
 	<title>{{ .Title }}</title>
 	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    <link href="https://fonts.googleapis.com/css?family=Lato|Patua+One" rel="stylesheet">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 	<link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
-	<script type="text/javascript" src="{{ .Site.BaseURL}}js/aframe.min.js"></script>
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL}}favicons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="{{ .Site.BaseURL}}favicons/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="{{ .Site.BaseURL}}favicons/favicon-16x16.png" sizes="16x16">
@@ -16,29 +16,61 @@
 	{{ .Hugo.Generator }}
 </head>
 <body>
-	<header>
-		{{partial "navigation.html" .}}
-	</header>	
+	<!--<header>-->
+		<!--{{partial "navigation.html" .}}-->
+	<!--</header>	-->
 
 {{partial "main-header" .}}
 
-{{partial "intro" .}}
 
-{{partial "webvr" .}}
+    <section class="container">
+        <div class="row justify-content-end">
+            <div class="col-lg-8 col-12">
+                {{partial "intro" .}}
 
-    {{partial "exploration-days" .}}
+                {{partial "about-us" .}}
+            </div>
+            <div class="col-lg-4 col-6">
+                {{partial "spot_business" .}}
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid contrast-storm">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-6">
+                {{partial "spot_rocket" .}}
+            </div>
+            <div class="col-lg-8 col-12">
+                {{partial "exploration-days" .}}
+        </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <div class="row justify-content-end">
+
+            <div class="col-lg-8 col-12">
+                {{partial "what-is-webvr" .}}
+            </div>
+            <div class="col-lg-4 col-6">
+                {{partial "spot_makers" .}}
+            </div>
+        </div>
+    </section>
+
+
+
+
 
 {{partial "our-work" .}}
 
 {{partial "clients" .}}
 
-{{partial "contact" .}}
 
-<footer>
-	<div class="container dark-section">
-		<p class="footer-copy">&copy;Studio Zero Digital Limited, 2017. Company Info and legal stuff can be <a href="/legal">found here</a></p>
-	</div>
-</footer>
+{{partial "footer" .}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>

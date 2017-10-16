@@ -1,0 +1,28 @@
+// if applied on container, you might want to make it .container-fluid
+.contrast-ash {
+  background : $bg_soot;
+  padding-top : 6rem;
+  padding-bottom : 6rem;
+  margin-top : 4rem;
+  color: $contrast_ash;
+
+  h1, h2, h3 {
+    color: $contrast_chalk;
+    border-color : $contrast_chalk;
+    a {
+      color: $contrast_chalk;
+    }
+  }
+
+  .spot {
+    .disc {
+      fill : $lilac;
+    }
+    .icon {
+      fill : $contrast_ash;
+    }
+  }
+}
+.contrast-storm ~ .container {
+  padding-top : 6rem;
+}

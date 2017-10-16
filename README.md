@@ -13,3 +13,12 @@ For details on installing Hugo - go here http://gohugo.io/tutorials/installing-o
 cd into directory and run `hugo server`.
 
 If you are doing CSS work, you'll also want to run sass. For this, have another terminal in the root directory and run `npm run dev`.
+
+
+---
+
+## Deployment
+
+Run `npm run deploy`
+
+NB, the static/google file is for site verification :)

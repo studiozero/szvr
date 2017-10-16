@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .a {
+        fill: #ff5252;
+        opacity: 0.35;
+      }
+
+      .b {
+        fill: #ffe169;
+      }
+    </style>
+  </defs>
+  <title>web-vr_xyz_logo_y-axis</title>
+  <g>
+    <circle class="a" cx="540" cy="540" r="534.973"/>
+    <circle class="a" cx="540" cy="540" r="478.826"/>
+    <circle class="a" cx="540" cy="540" r="391.64"/>
+  </g>
+
+</svg>

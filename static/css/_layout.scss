@@ -1,15 +1,27 @@
+html {
+  font-size : 14px;
+  @include respond-to(sm) {
+    font-size : 13px;
+  }
+  @include respond-to(md) {
+    font-size : 12px;
+  }
+  @include respond-to(lg) {
+    font-size : 14px;
+  }
+}
+
 body {
-	background:#f7f7f7;
+  background : $bg_yellow;
 }
 
-abbr[title] {
-  text-decoration: none;
+figcaption {
+  display:none;
 }
-
-ul li {
-  margin-left: 1rem;
+#aframe-scene {
+  min-height : 60vh;
+  position: relative;
 }
-
 #exploration-day-img {
   background: transparent url(/images/exploration-days.jpg) no-repeat scroll center center;
   width: 100%;
@@ -25,122 +37,11 @@ ul li {
 
 }
 
-a-scene{
-	display: block;
-	position: relative;
-	height: 100%;
+a-scene {
+	height: 60vh;
 	width: 100%;
 }
 
-.img-responsive{
-	max-width:100%;
-}
-
-.section-wrapper{
-	margin:10vh 2rem;
-
-	@include respond-to(xs){
-		margin:0;
-	}
-}
-
-.navbar{
-	padding:10px 2rem;
-}
-
-
-.header-wrapper{
-	height:700px;
-	position: relative;
-	padding:0 2rem;
-
-	@include respond-to(xs){
-		height:250px;
-		padding:0;
-	}
-}
-
-
-.text-logo{
-	position: absolute;
-	width:100%;
-	top:62%;
-	z-index:100;
-	text-align:center;
-	display:block;
-	left:0;
-	padding:0.8em;
-
-	svg{
-		fill:white;
-		max-width: 490px;
-	}
-}
-
-.client-container{
-
-	.row{
-		margin-bottom:25px;
-	}
-
-	.client-item{
-		background:#ecebe9;
-		padding:20px;
-		text-align: center;
-
-		@include respond-to(xs){
-			margin-bottom:25px;
-		}
-
-		img{
-			max-width: 100%;
-		}
-	}
-}
-
-.intro-container{
-	background:#444;
-	padding:50px 0;
-}
-
-
-//
-
-.webvr-container{
-	padding:50px 0;
-}
-
-//
-
-.our-work{
-	background:url('../images/vr-patterns.png');
-	padding-top:25px;
-}
-
-.work-item{
-	margin-bottom:30px;
-
-	h4{
-		font-family: 'futuracondensed_extrabold';
-		font-size:24px;
-		text-transform: uppercase;
-	}
-}
-
-.item-body{
-	background:white;
-	padding:20px;
-	font-family:'futura';
-	height:200px;
-	overflow:hidden;
-
-	@include respond-to(xs){
-		height: auto;
-	}
-}
-
-
-// contact section
 
 .contact-wrapper{
 	background:#ccc;
@@ -151,43 +52,5 @@ a-scene{
 		padding:20px;
 	}
 
-	.section-heading{
-		//background-image: linear-gradient(to right, rgb(248, 33, 249), rgb(145, 36, 22));
-	}
-
-	.contact-item{
-		color:white;
-		font-family:'futura';
-		font-size:20px;
-		text-align: center;
-	}
-}
-
-
-// Footer
-
-footer{
-	background:#444;
-	overflow:hidden;
 
 }
-
-.footer-copy{
-	color:white;
-	line-height:100px;
-	margin:0;
-
-	a{
-		color:#f70a53;
-	}
-}
-
-
-
-
-
-
-
-
-
-

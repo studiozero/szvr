@@ -1,121 +1,51 @@
-@font-face {
-    font-family: 'futurabold';
-    src: url('../fonts/futura-bold-webfont.woff2') format('woff2'),
-         url('../fonts/futura-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size : 1.6rem;
+  line-height : 2.4rem;
+  color : $body_text;
 }
 
-
-@font-face {
-    font-family: 'futuracondensed_extrabold';
-    src: url('../fonts/futura-condensedextrabold-webfont.woff2') format('woff2'),
-         url('../fonts/futura-condensedextrabold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+a {
+  color : $link;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family : 'Oswald', sans-serif;
+  color: $headline;
+  padding-bottom: 0.4em;
+  margin : 0;
 
-
-
-@font-face {
-    font-family: 'futuracondensed_medium';
-    src: url('../fonts/futura-condensedmedium-webfont.woff2') format('woff2'),
-         url('../fonts/futura-condensedmedium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
-
-@font-face {
-    font-family: 'futuramedium';
-    src: url('../fonts/futura-medium-webfont.woff2') format('woff2'),
-         url('../fonts/futura-medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'futuramedium_italic';
-    src: url('../fonts/futura-mediumitalic-webfont.woff2') format('woff2'),
-         url('../fonts/futura-mediumitalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-.section-heading{
-	font-family:'futurabold';
-	font-size:50px;
-	text-transform:uppercase;
-	color:white;
-	text-align:center;
-
-    margin-bottom: 25px;
-
-	@include respond-to(sm) {
-		font-size: 22px;
-	}
-
-	@include respond-to(xs) {
-		font-size: 22px;
-	}
-}
-
-.dark-heading{
-	color:#444;
-}
-
-.speciality-list{
-	font-family:'futurabold';
-	color:#ED0082;
-	font-size:35px;
-	text-align:center;
-
-    @include respond-to(xs){
-        font-size: 20px;
+  a {
+    color : $headline;
+    &:hover {
+      color : $link_other;
     }
+  }
 }
 
-.homepage-body{
-	color:white;
-	font-family: 'futura';
-	font-size:24px;
+h1 {
+  font-size : 4.4rem;
+  padding-top : 3rem;
+  border-top : 2px solid $headline;
 
-    @include respond-to(xs){
-        font-size: 18px;
-        padding:1rem;
-    }
+  &.borderless {
+    border-top:0;
+  }
+}
+h2 {
+  font-size : 2.8rem;
+  line-height: 3rem;
+  padding-top : 2rem;
+  border-top : 1px solid $headline;
 }
 
-.dark-body{
-	color:#444;
+h3 {
+  font-size : 2rem;
+  line-height : 3rem;
 }
-
-
-.gradient-letters{
-	color: transparent;
-	-webkit-background-clip: text;
-	background-clip: text;
-	position: relative;
-}
-
-
-.body-link{
-    text-transform: uppercase;
-    border-bottom: 2px solid #f70a53;
-    padding-bottom: 5px;
-
-    &:hover{
-        text-decoration: none;
-    }
+h4 {
+  font-size : 1.8rem;
+  line-height : 2rem;
 }

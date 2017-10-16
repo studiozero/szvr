@@ -1,51 +1,51 @@
-<div class="header-wrapper">
-  <div class="text-logo">
-    {{ partial "logo_text" }}
-  </div>
+<div id="aframe-scene">
+    <!--<div class="text-logo">-->
+        <!--{{ partial "logo_text" }}-->
+    <!--</div>-->
 
-			<a-scene embedded>
-			<a-assets>
-		<img id="grid" src="images/grid.png" crossorigin="anonymous" />
-    <img id="sky" src="images/chrome.jpg" crossorigin="anonymous" />
-    <img id="reflect" src="images/reflect.png" crossorigin="anonymous" />
-	</a-assets>
+    <a-scene embedded>
+        <a-assets>
+            <img id="sky" src="images/chrome.jpg" crossorigin="anonymous"/>
+            <img id="reflect" src="images/reflect.png" crossorigin="anonymous"/>
+        </a-assets>
 
-	<a-entity id="logo" position="0 1.8 -8">
-  	<a-entity id="one" 
-  		geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" 
-  		scale="5 5 5" 
-  		position="-7.5 1 8.65" 
-  		material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" 
-  		rotation="30 90 90">
-  	</a-entity>
-  	
-  	<a-entity id="two" 
-	  	geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" 
-	  	position="0 0.23 24" 
-	  	material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" 
-	  	rotation="90 90 90">
-  	</a-entity>
+        <a-entity id="logo" position="0 1.8 -8">
+            <a-entity id="one"
+                      geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3"
+                      scale="5 5 5"
+                      position="-7.5 1 8.65"
+                      material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;"
+                      rotation="30 90 90">
+            </a-entity>
 
-  	<a-entity id="three" 
-  		geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3" 
-  		scale="2 2 2" 
-  		position="3 0.3 20" 
-  		material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;" 
-  		rotation="30 90 90">
-  	</a-entity>
-	</a-entity>
+            <a-entity id="two"
+                      geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3"
+                      position="0 0.23 24"
+                      material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;"
+                      rotation="90 90 90">
+            </a-entity>
 
-	<a-entity ground></a-entity>
+            <a-entity id="three"
+                      geometry="primitive: cylinder; height: 0.1; segmentsRadial: 3"
+                      scale="2 2 2"
+                      position="3 0.3 20"
+                      material="color:#fff; metalness:1; roughness: 0.02; sphericalEnvMap: #reflect;"
+                      rotation="30 90 90">
+            </a-entity>
+        </a-entity>
 
-	<a-sky src="#sky" rotation="0 -90 0"></a-sky>
+        <a-entity ground></a-entity>
 
-	<a-entity light="type: ambient; color: white"></a-entity>
-	
-	<a-entity id="peep" position="0 2.5 -10" rotation="0 90 0">
-  	<a-animation attribute="position" dur="10000" fill="forwards" to="0 0 19.5"></a-animation>
-  	<a-animation id="camera-animation" attribute="rotation" delay="5000" dur="2000" fill="forwards" to="1.6 0 0"></a-animation>
-  	<a-camera></a-camera>
-	</a-entity>
-	</a-scene>
+        <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+
+        <a-entity light="type: ambient; color: white"></a-entity>
+
+        <a-entity id="peep" position="0 2.5 -10" rotation="0 90 0">
+            <a-animation attribute="position" dur="10000" fill="forwards" to="0 0 19.5"></a-animation>
+            <a-animation id="camera-animation" attribute="rotation" delay="5000" dur="2000" fill="forwards"
+                         to="1.6 0 0"></a-animation>
+            <a-camera></a-camera>
+        </a-entity>
+    </a-scene>
 
 </div>
